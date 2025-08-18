@@ -3,9 +3,9 @@ class_name Player1
 @onready var state_machine = $StateMachine
 const speed := 150.0
 const JUMP_VELOCITY := -300
-@export var vidas = 3
+@export var vidas = 5
 
-@onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = %Anima
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
