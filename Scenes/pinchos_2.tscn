@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://brep7fh6qxo01"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_lekrh"]
+
+[node name="Pinchos2" type="Node2D"]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(4, 4)
+rotation = -3.14099
+scale = Vector2(8, 8)
+mesh = SubResource("PrismMesh_lekrh")

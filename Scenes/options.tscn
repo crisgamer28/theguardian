@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcuf3t1o82k15"]
+
+[ext_resource type="Script" uid="uid://dtdjbwsw3xvfv" path="res://options.gd" id="1_4tmxy"]
+[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_qyyw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd70p"]
+bg_color = Color(0.521366, 0.418442, 0.201381, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldhss"]
+bg_color = Color(0.521569, 0.419608, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20v25"]
+bg_color = Color(0.521569, 0.419608, 0.203922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prnvy"]
+bg_color = Color(0.529412, 0.419608, 0.2, 1)
+
+[node name="menú" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4tmxy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qyyw6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -129.0
+offset_right = 128.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Volume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_vd70p")
+text = "Volume
+"
+
+[node name="Resolution" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldhss")
+text = "Resolution
+"
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_20v25")
+text = "Controls
+"
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_prnvy")
+text = "Back
+"
+
+[connection signal="pressed" from="VBoxContainer/Volume" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resolution" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

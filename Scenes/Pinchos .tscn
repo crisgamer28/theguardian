@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ya7jlm52v51i"]
+
+[ext_resource type="Script" uid="uid://cc1yjvkw56lg4" path="res://scripts/pinchos_.gd" id="1_mm37x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm37x"]
+size = Vector2(32, 8)
+
+[node name="Pinchos" type="StaticBody2D"]
+script = ExtResource("1_mm37x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 4)
+shape = SubResource("RectangleShape2D_mm37x")

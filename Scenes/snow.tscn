@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp88754ldhe26"]
+
+[ext_resource type="Script" uid="uid://b2l68882rgifj" path="res://scripts/snow.gd" id="1_rl54q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xyof"]
+size = Vector2(6, 6)
+
+[node name="Snow" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_rl54q")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-3, -3)
+scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(0, 0, 8, 0, 8, 8, 0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8xyof")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

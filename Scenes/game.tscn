@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1vi0w77pfodo"]
+
+[ext_resource type="Script" uid="uid://w5ds7k6jheyu" path="res://scripts/game.gd" id="1_i6g32"]
+[ext_resource type="PackedScene" uid="uid://ceapxigsjwfqo" path="res://Scenes/Nivel1.tscn" id="2_1l0tm"]
+[ext_resource type="Script" uid="uid://bvgyxiv67t6io" path="res://scripts/spikes.gd" id="4_h4fw4"]
+[ext_resource type="Script" uid="uid://di3g1t2ebvy2n" path="res://scripts/pasaje.gd" id="5_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Scenes/player_1.tscn" id="6_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cpuoi5p2i1g3v" path="res://Scenes/enemy.tscn" id="6_i6g32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n74ki"]
+size = Vector2(64, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l0tm"]
+size = Vector2(49, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6g32"]
+size = Vector2(34, 67.5)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_i6g32")
+metadata/_edit_vertical_guides_ = [-184.0]
+
+[node name="Level1" parent="." groups=["Enemy"] instance=ExtResource("2_1l0tm")]
+
+[node name="Spikes" type="Area2D" parent="."]
+position = Vector2(184, 73)
+collision_layer = 16
+collision_mask = 130
+script = ExtResource("4_h4fw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
+shape = SubResource("RectangleShape2D_n74ki")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Spikes"]
+position = Vector2(87.5, 0.5)
+shape = SubResource("RectangleShape2D_1l0tm")
+
+[node name="Player1" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(28, -20)
+collision_mask = 29
+
+[node name="Pasaje" type="Area2D" parent="."]
+position = Vector2(2734, 26)
+collision_layer = 16
+collision_mask = 130
+script = ExtResource("5_ldgsr")
+next_scene_path = "res://Scenes/Nivel2.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pasaje"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i6g32")
+
+[node name="Enemy" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(367, 10)
+collision_mask = 1
+
+[node name="Enemy2" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(637, 42)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(947, 42)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(1353, -7)
+
+[connection signal="body_entered" from="Spikes" to="Spikes" method="_on_body_entered"]
+[connection signal="body_entered" from="Pasaje" to="Pasaje" method="_on_body_entered"]

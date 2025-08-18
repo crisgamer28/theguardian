@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://brcsr7n01ejav"]
+
+[node name="Fondo" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1891.0
+offset_top = -530.0
+offset_right = 5264.0
+offset_bottom = 1990.0
+color = Color(0.00172501, 0.143253, 0.620216, 0.756863)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(400, 128)
+scale = Vector2(0.266667, 0.373024)

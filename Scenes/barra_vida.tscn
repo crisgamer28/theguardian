@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cumjpica6cgto"]
+
+[ext_resource type="Texture2D" uid="uid://bq8yv3ciipr4r" path="res://Spritesheets/fondo_barra.png" id="1_sidov"]
+[ext_resource type="Texture2D" uid="uid://cob8hewa2xyp2" path="res://Spritesheets/borde_barra.png" id="2_no00b"]
+[ext_resource type="Texture2D" uid="uid://pifidxga14hk" path="res://Spritesheets/progreso_barra.png" id="3_gfb5j"]
+
+[node name="BarraVida" type="CanvasLayer"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -144.0
+offset_top = -48.0
+offset_right = -56.0
+offset_bottom = -32.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_sidov")
+texture_over = ExtResource("2_no00b")
+texture_progress = ExtResource("3_gfb5j")
