@@ -1,6 +1,6 @@
 [gd_scene load_steps=40 format=3 uid="uid://txcplk4msayd"]
 
-[ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
+[ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
 
@@ -201,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k46vw")
 }],
-"loop": true,
+"loop": false,
 "name": &"die player",
 "speed": 5.0
 }, {
@@ -290,7 +290,7 @@ unique_name_in_owner = true
 position = Vector2(-1.90735e-06, -4.76837e-07)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
-animation = &"defense player"
+animation = &"idle player"
 speed_scale = 1.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://btdhnqfnxtjoc"]
 
-[ext_resource type="Texture2D" uid="uid://cyehge0qj7wn" path="res://knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 4 v3.png" id="1_ljt6f"]
+[ext_resource type="Texture2D" uid="uid://cyehge0qj7wn" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 4 v3.png" id="1_ljt6f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rvwq"]
 

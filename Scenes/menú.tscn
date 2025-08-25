@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3s5ce0fpxtkm"]
 
-[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="1_it8e6"]
+[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://assets/Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="1_it8e6"]
 [ext_resource type="Script" uid="uid://cpuag1wuye2b2" path="res://scripts/menú.gd" id="1_ldhss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd70p"]

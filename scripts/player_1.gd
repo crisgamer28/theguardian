@@ -7,6 +7,12 @@ const JUMP_VELOCITY := -300
 
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 
+var checkpoint_position : Vector2 = Vector2.ZERO
+var spawn_position : Vector2
+
+func _ready() -> void:
+	spawn_position = global_position
+	checkpoint_position = spawn_position
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -17,8 +23,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-	if position.y > 400:
-		get_tree().reload_current_scene()
+	if global_position.y > 800:
+		respawn()
 	if direction != 0:
 		sprite.flip_h = direction < 0
 		
@@ -41,3 +47,5 @@ func morir():
 	get_tree().reload_current_scene()
 	#queue_free()
 	print("Game Over")
+func respawn():
+	global_position = checkpoint_position

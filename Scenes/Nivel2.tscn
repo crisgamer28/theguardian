@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://bef77pt26v5b7"]
 
-[ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://Otros Tilemaps/Tiles/Assets/Background_2.png" id="1_pox8l"]
-[ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://Otros Tilemaps/Tiles/Assets/Assets.png" id="1_s2rat"]
+[ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_2.png" id="1_pox8l"]
+[ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="1_s2rat"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Scenes/player_1.tscn" id="3_73c3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1tle"]

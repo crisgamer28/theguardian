@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1vi0w77pfodo"]
+[gd_scene load_steps=11 format=3 uid="uid://b1vi0w77pfodo"]
 
 [ext_resource type="Script" uid="uid://w5ds7k6jheyu" path="res://scripts/game.gd" id="1_i6g32"]
 [ext_resource type="PackedScene" uid="uid://ceapxigsjwfqo" path="res://Scenes/Nivel1.tscn" id="2_1l0tm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://di3g1t2ebvy2n" path="res://scripts/pasaje.gd" id="5_ldgsr"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Scenes/player_1.tscn" id="6_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cpuoi5p2i1g3v" path="res://Scenes/enemy.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://cqopa6aq1lvox" path="res://Scenes/checkpoint.tscn" id="7_1l0tm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n74ki"]
 size = Vector2(64, 14)
@@ -63,6 +64,11 @@ position = Vector2(947, 42)
 
 [node name="Enemy4" parent="." instance=ExtResource("6_i6g32")]
 position = Vector2(1353, -7)
+
+[node name="checkpoint" parent="." instance=ExtResource("7_1l0tm")]
+position = Vector2(1538, -67)
+collision_layer = 128
+collision_mask = 2
 
 [connection signal="body_entered" from="Spikes" to="Spikes" method="_on_body_entered"]
 [connection signal="body_entered" from="Pasaje" to="Pasaje" method="_on_body_entered"]

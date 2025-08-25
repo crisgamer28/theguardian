@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=4 uid="uid://ceapxigsjwfqo"]
 
-[ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://Otros Tilemaps/Tiles/Assets/Assets.png" id="1_gn3e4"]
-[ext_resource type="Texture2D" uid="uid://bbhtls602ooaa" path="res://Otros Tilemaps/6ce7d556be4d7dfdd183beb5536da5bb.jpg" id="2_k55au"]
-[ext_resource type="Texture2D" uid="uid://bhoodyt77wfb1" path="res://Otros Tilemaps/Tiles/Assets/Background_1.png" id="2_vfq2v"]
-[ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://Otros Tilemaps/Tiles/Assets/Background_2.png" id="3_2gjgb"]
+[ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="1_gn3e4"]
+[ext_resource type="Texture2D" uid="uid://bbhtls602ooaa" path="res://assets/Otros Tilemaps/6ce7d556be4d7dfdd183beb5536da5bb.jpg" id="2_k55au"]
+[ext_resource type="Texture2D" uid="uid://bhoodyt77wfb1" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_1.png" id="2_vfq2v"]
+[ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_2.png" id="3_2gjgb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd15t"]
 texture = ExtResource("3_2gjgb")

@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://ba5tdqw0xmmv"]
 
-[ext_resource type="Texture2D" uid="uid://fn0bygvra1x0" path="res://f6ade0dba71c73dcdccbd5dac24e0539.jpg" id="1_btb33"]
+[ext_resource type="Texture2D" uid="uid://fn0bygvra1x0" path="res://assets/f6ade0dba71c73dcdccbd5dac24e0539.jpg" id="1_btb33"]
 [ext_resource type="Script" uid="uid://bfp1fe5k487ku" path="res://scripts/player.gd" id="1_dw050"]
 [ext_resource type="PackedScene" uid="uid://cp88754ldhe26" path="res://Scenes/snow.tscn" id="2_f1ek2"]
-[ext_resource type="Texture2D" uid="uid://c6yun8dhfk4b5" path="res://2e29bdbaa07d95b6f0253ea83031ae0a.jpg" id="2_qw2bf"]
-[ext_resource type="Texture2D" uid="uid://bmw166q1uccmu" path="res://953d6c0a8026ae79e81a689692428c6f.jpg" id="3_g5h5a"]
-[ext_resource type="Texture2D" uid="uid://cchmtg4ptjwnn" path="res://Spritesheets/1_Cat_Idle-Sheet.png" id="4_o2m60"]
-[ext_resource type="Texture2D" uid="uid://cs3gj61n6xhgy" path="res://Spritesheets/4_Cat_Fall-Sheet.png" id="5_hcpjn"]
-[ext_resource type="Texture2D" uid="uid://3hb1olomadud" path="res://Spritesheets/3_Cat_Jump-Sheet.png" id="6_xwd11"]
-[ext_resource type="Texture2D" uid="uid://bqwhm6xjxx17o" path="res://Spritesheets/2_Cat_Run-Sheet.png" id="7_bpxwk"]
+[ext_resource type="Texture2D" uid="uid://c6yun8dhfk4b5" path="res://assets/2e29bdbaa07d95b6f0253ea83031ae0a.jpg" id="2_qw2bf"]
+[ext_resource type="Texture2D" uid="uid://bmw166q1uccmu" path="res://assets/953d6c0a8026ae79e81a689692428c6f.jpg" id="3_g5h5a"]
+[ext_resource type="Texture2D" uid="uid://cchmtg4ptjwnn" path="res://assets/Spritesheets/1_Cat_Idle-Sheet.png" id="4_o2m60"]
+[ext_resource type="Texture2D" uid="uid://cs3gj61n6xhgy" path="res://assets/Spritesheets/4_Cat_Fall-Sheet.png" id="5_hcpjn"]
+[ext_resource type="Texture2D" uid="uid://3hb1olomadud" path="res://assets/Spritesheets/3_Cat_Jump-Sheet.png" id="6_xwd11"]
+[ext_resource type="Texture2D" uid="uid://bqwhm6xjxx17o" path="res://assets/Spritesheets/2_Cat_Run-Sheet.png" id="7_bpxwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvuhb"]
 size = Vector2(9, 18)

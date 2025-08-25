@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcuf3t1o82k15"]
 
 [ext_resource type="Script" uid="uid://dtdjbwsw3xvfv" path="res://options.gd" id="1_4tmxy"]
-[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_qyyw6"]
+[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://assets/Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_qyyw6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd70p"]
 bg_color = Color(0.521366, 0.418442, 0.201381, 1)

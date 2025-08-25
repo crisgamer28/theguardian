@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 folder_colors={
 "res://Scenes/": "green",
+"res://assets/": "blue",
 "res://scripts/": "red"
 }
 
@@ -67,6 +68,7 @@ defense={
 2d_physics/layer_5="Pasaje"
 2d_physics/layer_6="enemy3 "
 2d_physics/layer_7="raycast"
+2d_physics/layer_8="checkpoint"
 
 [rendering]
 

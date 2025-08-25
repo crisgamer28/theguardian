@@ -1,10 +1,10 @@
 [gd_scene load_steps=54 format=3 uid="uid://chx75i8t2rw20"]
 
-[ext_resource type="Texture2D" uid="uid://cstphqrxijkc4" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Idle.png" id="1_867ty"]
-[ext_resource type="Texture2D" uid="uid://c8ifjdhr5y8r7" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Attack1.png" id="1_qit8y"]
-[ext_resource type="Texture2D" uid="uid://djaqoftdff8w2" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Hurt.png" id="2_4gdgy"]
-[ext_resource type="Texture2D" uid="uid://cxedpd5imexen" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Die.png" id="2_8n4gd"]
-[ext_resource type="Texture2D" uid="uid://j2wwm7on1kdh" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Walk.png" id="2_vfv5t"]
+[ext_resource type="Texture2D" uid="uid://cstphqrxijkc4" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Idle.png" id="1_867ty"]
+[ext_resource type="Texture2D" uid="uid://c8ifjdhr5y8r7" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Attack1.png" id="1_qit8y"]
+[ext_resource type="Texture2D" uid="uid://djaqoftdff8w2" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Hurt.png" id="2_4gdgy"]
+[ext_resource type="Texture2D" uid="uid://cxedpd5imexen" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Die.png" id="2_8n4gd"]
+[ext_resource type="Texture2D" uid="uid://j2wwm7on1kdh" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Walk.png" id="2_vfv5t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvvil"]
 atlas = ExtResource("1_qit8y")

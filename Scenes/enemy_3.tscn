@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://deh0j64u0nkgg"]
 
 [ext_resource type="Script" uid="uid://c240rg0775qrf" path="res://scripts/enemy_3.gd" id="1_k1fo6"]
-[ext_resource type="Texture2D" uid="uid://j2wwm7on1kdh" path="res://Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Walk.png" id="2_250ly"]
+[ext_resource type="Texture2D" uid="uid://j2wwm7on1kdh" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_Yellow/Skeleton_Without_VFX/Skeleton_01_Yellow_Walk.png" id="2_250ly"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfxc2"]
 atlas = ExtResource("2_250ly")
