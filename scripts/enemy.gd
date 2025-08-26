@@ -39,13 +39,13 @@ func _physics_process(delta: float) -> void:
 		left_limit.position = left_pos
 	move_and_slide()
 	last_position = position
-
+#esta funcion hace que el enemigo ejecute ataque al player
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player1:
 		body.restar_vidas(damage)
 		animationPlayer.play("attack1")
 
-
+#esta funcion hace que finalice el ataque y vuelva al estado walk
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack1":
 		animationPlayer.play("walk")

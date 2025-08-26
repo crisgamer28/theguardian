@@ -5,6 +5,7 @@ const speed := 150.0
 const JUMP_VELOCITY := -300
 @export var vidas = 5
 
+@onready var barravida: TextureProgressBar = $Camera2D/Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 
 var checkpoint_position : Vector2 = Vector2.ZERO
@@ -39,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 func restar_vidas(daño: int = 1):
 	vidas -= daño
+	barravida.value = vidas
 	print("Recibiste daño! vidas: ", vidas)
 	if vidas <= 0:
 		morir()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=41 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
+[ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="4_c4k0l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -287,7 +288,7 @@ script = ExtResource("3_p0e4v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-1.90735e-06, -4.76837e-07)
+position = Vector2(-4.54747e-13, -2.84217e-14)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
 animation = &"idle player"
@@ -299,5 +300,11 @@ shape = SubResource("RectangleShape2D_tmdyv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="Barravida" parent="Camera2D" instance=ExtResource("4_c4k0l")]
+offset_left = -185.0
+offset_top = -107.0
+offset_right = -128.0
+offset_bottom = -91.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
