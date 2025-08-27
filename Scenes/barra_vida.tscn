@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bq8yv3ciipr4r" path="res://assets/Spritesheets/fondo_barra.png" id="1_sidov"]
 [ext_resource type="Texture2D" uid="uid://cob8hewa2xyp2" path="res://assets/Spritesheets/borde_barra.png" id="2_no00b"]
 [ext_resource type="Texture2D" uid="uid://pifidxga14hk" path="res://assets/Spritesheets/progreso_barra.png" id="3_gfb5j"]
-[ext_resource type="Script" uid="uid://b5qt2fk6u1f6u" path="res://Scenes/texture_progress_bar.gd" id="4_ghba5"]
+[ext_resource type="Script" uid="uid://b5qt2fk6u1f6u" path="res://scripts/texture_progress_bar.gd" id="4_ghba5"]
 
 [node name="Barravida" type="TextureProgressBar"]
 offset_right = 57.0

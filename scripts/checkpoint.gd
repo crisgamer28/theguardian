@@ -2,9 +2,6 @@ extends Area2D
 
 var activated : bool = false
 
-
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player1:
 		activated = true
