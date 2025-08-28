@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://pbv76wghxcyf"]
+
+[ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="1_nmxi0"]
+[ext_resource type="Script" uid="uid://ca3wf1mtwwk5s" path="res://scripts/cameraplayer.gd" id="1_ub8rc"]
+
+[node name="Camera2D" type="Camera2D"]
+zoom = Vector2(3, 3)
+script = ExtResource("1_ub8rc")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("..")
+
+[node name="Barravida" parent="." instance=ExtResource("1_nmxi0")]
+offset_left = -185.0
+offset_top = -107.0
+offset_right = -128.0
+offset_bottom = -91.0

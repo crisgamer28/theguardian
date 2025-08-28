@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
-[ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="4_c4k0l"]
+[ext_resource type="PackedScene" uid="uid://pbv76wghxcyf" path="res://Scenes/cameraplayertscn.tscn" id="4_c4k0l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -298,13 +298,6 @@ speed_scale = 1.3
 position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_tmdyv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
-
-[node name="Barravida" parent="Camera2D" instance=ExtResource("4_c4k0l")]
-offset_left = -185.0
-offset_top = -107.0
-offset_right = -128.0
-offset_bottom = -91.0
+[node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]

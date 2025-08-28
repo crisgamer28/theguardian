@@ -44,9 +44,9 @@ func restar_vidas(daño: int = 1):
 	print("Recibiste daño! vidas: ", vidas)
 	if vidas <= 0:
 		morir()
-		
+		$"../Panel".show()
 func morir():
-	get_tree().reload_current_scene()
+	$".".hide()
 	#queue_free()
 	print("Game Over")
 func respawn():
