@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtvyts8i016qc"]
+[gd_scene load_steps=5 format=3 uid="uid://dtvyts8i016qc"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ur7yj"]
-bg_color = Color(0.873954, 0, 0.13859, 1)
+[ext_resource type="Script" uid="uid://xswj010eft21" path="res://scripts/panel.gd" id="1_lonnl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lonnl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1uyw"]
+bg_color = Color(0, 0.383412, 0.134472, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hgfh"]
+bg_color = Color(0, 0.383802, 0.12512, 1)
 
 [node name="Panel" type="CanvasLayer"]
+script = ExtResource("1_lonnl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1154.0
+offset_bottom = 648.0
+color = Color(0.584314, 0.584314, 0.584314, 0.482353)
 
 [node name="GAME OVER" type="Label" parent="."]
 offset_left = 448.0
@@ -13,7 +27,7 @@ offset_bottom = 192.0
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_ur7yj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lonnl")
 text = "GAME OVER!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -24,6 +38,7 @@ offset_left = 448.0
 offset_top = 256.0
 offset_right = 704.0
 offset_bottom = 320.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r1uyw")
 text = "RETRY"
 
 [node name="Exit" type="Button" parent="."]
@@ -31,4 +46,8 @@ offset_left = 448.0
 offset_top = 384.0
 offset_right = 704.0
 offset_bottom = 448.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5hgfh")
 text = "EXIT"
+
+[connection signal="pressed" from="Try" to="." method="_on_try_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

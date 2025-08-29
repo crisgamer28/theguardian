@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpuoi5p2i1g3v"]
+[gd_scene load_steps=20 format=3 uid="uid://cpuoi5p2i1g3v"]
 
 [ext_resource type="Script" uid="uid://dee3qcpo65qkj" path="res://scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://nu580e3xiika" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="2_4gyqm"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://255gb8klcy0y" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack2.png" id="5_epg4t"]
 [ext_resource type="Texture2D" uid="uid://b06a2dq15qy63" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Die.png" id="6_3yqyl"]
 [ext_resource type="Texture2D" uid="uid://cgt6eqbxs3l0w" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Hurt.png" id="7_wujgv"]
+[ext_resource type="Script" uid="uid://cft032g4ls134" path="res://scripts/states_enemy.gd" id="8_auwsv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auwsv"]
 size = Vector2(7, 25.5)
@@ -344,7 +345,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
 size = Vector2(19.6877, 59.4483)
 
-[node name="Enemy" type="CharacterBody2D"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_auwsv"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_qi2p4")
@@ -393,6 +396,12 @@ collide_with_areas = true
 position = Vector2(-7, 9)
 target_position = Vector2(-18, 0)
 collide_with_areas = true
+
+[node name="StatesEnemy" type="Node" parent="."]
+script = ExtResource("8_auwsv")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeAnimation_auwsv")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

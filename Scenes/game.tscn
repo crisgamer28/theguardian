@@ -35,7 +35,6 @@ shape = SubResource("RectangleShape2D_i6g32")
 
 [node name="Enemy" parent="." instance=ExtResource("6_i6g32")]
 position = Vector2(367, 10)
-collision_mask = 1
 
 [node name="Enemy2" parent="." instance=ExtResource("6_i6g32")]
 position = Vector2(637, 42)

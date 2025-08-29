@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=43 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
 [ext_resource type="PackedScene" uid="uid://pbv76wghxcyf" path="res://Scenes/cameraplayertscn.tscn" id="4_c4k0l"]
+[ext_resource type="Script" uid="uid://b6viw6rcvbfuw" path="res://Scenes/attack.gd" id="5_aatkl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -279,6 +280,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmdyv"]
 size = Vector2(10, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aatkl"]
+size = Vector2(5, 16)
+
 [node name="Player1" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_tmdyv")
@@ -300,4 +304,13 @@ shape = SubResource("RectangleShape2D_tmdyv")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(10, 5)
+script = ExtResource("5_aatkl")
+
+[node name="Attack" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_aatkl")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

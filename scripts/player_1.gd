@@ -46,8 +46,7 @@ func restar_vidas(daño: int = 1):
 		morir()
 		$"../Panel".show()
 func morir():
+	set_physics_process(false)
 	$".".hide()
-	#queue_free()
-	print("Game Over")
 func respawn():
 	global_position = checkpoint_position

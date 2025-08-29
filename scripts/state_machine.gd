@@ -5,6 +5,7 @@ enum States { idle, walk, jump, attack, defense, die }
 var state : int = States.idle
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 
+
 func update_state():
 	if Input.is_action_pressed("defense"):
 		change_states(States.defense)
@@ -12,6 +13,7 @@ func update_state():
 		return
 	if Input.is_action_just_pressed("ataque"):
 		change_states(States.attack)
+		$"../Area2D"
 	if state == States.attack:
 		return
 	if not player1.is_on_floor():
@@ -31,9 +33,11 @@ func change_states(new_state : int) -> void:
 		States.jump : sprite.play("jump player")
 		States.attack : sprite.play("attack player")
 		States.defense : sprite.play("defense player")
+		States.die : 
+			sprite.play("die player")
+			player1.velocity = Vector2.ZERO
 	#if sprite.is_playing():
 		#await sprite.animation_finished
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if state == States.attack:
 		change_states(States.idle)

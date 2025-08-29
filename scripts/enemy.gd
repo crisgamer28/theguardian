@@ -10,7 +10,7 @@ class_name Enemy
 
 @export var speed := 50
 @export var damage := 1
-@export var vidas = 1
+@export var health = 1
 
 var gravity : float = 25.0
 var direction := 1
@@ -39,6 +39,16 @@ func _physics_process(delta: float) -> void:
 		left_limit.position = left_pos
 	move_and_slide()
 	last_position = position
+func take_damage(amount : int):
+	if health <= 0:
+		return
+	health -= amount
+	if health > 0:
+		die()
+func die():
+	animationPlayer.play("die")
+	await animationPlayer.animation_finished
+	queue_free() 
 #esta funcion hace que el enemigo ejecute ataque al player
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player1:
