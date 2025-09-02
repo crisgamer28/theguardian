@@ -1,12 +1,20 @@
 extends CharacterBody2D
 class_name Player1
+## Este es el jugador
+
 @onready var state_machine = $StateMachine
 const speed := 150.0
 const JUMP_VELOCITY := -300
 @export var vidas = 5
 
+@onready var game_over_menu: CanvasLayer = %GameOverMenu
 @onready var barravida: TextureProgressBar = $Camera2D/Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
+
+
+var delay_die : float = 0.3
+
+var dead_anim_delay : float = 2.0 # Tiempo antes de que aparezca el menu game over
 
 var checkpoint_position : Vector2 = Vector2.ZERO
 var spawn_position : Vector2
@@ -14,6 +22,8 @@ var spawn_position : Vector2
 func _ready() -> void:
 	spawn_position = global_position
 	checkpoint_position = spawn_position
+
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -44,9 +54,14 @@ func restar_vidas(daño: int = 1):
 	print("Recibiste daño! vidas: ", vidas)
 	if vidas <= 0:
 		morir()
-		$"../Panel".show()
+
+## Esta funcion se llama cuando el personaje muere
 func morir():
 	set_physics_process(false)
-	$".".hide()
+	sprite.play("die player")
+	await sprite.animation_finished
+	game_over_menu.show()
+
+
 func respawn():
 	global_position = checkpoint_position

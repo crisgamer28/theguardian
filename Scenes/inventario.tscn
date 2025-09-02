@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpptsoyh7427m"]
+
+[ext_resource type="Texture2D" uid="uid://dsgn30g54hxqp" path="res://icon.svg" id="1_g53kp"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 128.0
+offset_bottom = 128.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_g53kp")
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("1_g53kp")

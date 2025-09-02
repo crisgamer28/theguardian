@@ -6,6 +6,7 @@ var state : int = States.idle
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 
 
+
 func update_state():
 	if Input.is_action_pressed("defense"):
 		change_states(States.defense)
@@ -33,9 +34,7 @@ func change_states(new_state : int) -> void:
 		States.jump : sprite.play("jump player")
 		States.attack : sprite.play("attack player")
 		States.defense : sprite.play("defense player")
-		States.die : 
-			sprite.play("die player")
-			player1.velocity = Vector2.ZERO
+		States.die : sprite.play("die player")
 	#if sprite.is_playing():
 		#await sprite.animation_finished
 func _on_animated_sprite_2d_animation_finished() -> void:
@@ -43,3 +42,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		change_states(States.idle)
 	if state == States.defense:
 		change_states(States.idle)
+	if state == States.die:
+		$".".show()

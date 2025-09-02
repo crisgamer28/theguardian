@@ -50,7 +50,8 @@ position = Vector2(1541, -61)
 collision_layer = 128
 collision_mask = 2
 
-[node name="Panel" parent="." instance=ExtResource("7_v158k")]
+[node name="GameOverMenu" parent="." instance=ExtResource("7_v158k")]
+unique_name_in_owner = true
 visible = false
 
 [connection signal="body_entered" from="Pasaje" to="Pasaje" method="_on_body_entered"]
