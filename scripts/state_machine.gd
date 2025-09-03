@@ -14,7 +14,7 @@ func update_state():
 		return
 	if Input.is_action_just_pressed("ataque"):
 		change_states(States.attack)
-		$"../Area2D"
+		
 	if state == States.attack:
 		return
 	if not player1.is_on_floor():
@@ -29,12 +29,24 @@ func change_states(new_state : int) -> void:
 			return
 	state = new_state
 	match state:
-		States.idle : sprite.play("idle player")
-		States.walk : sprite.play("walk player")
-		States.jump : sprite.play("jump player")
-		States.attack : sprite.play("attack player")
-		States.defense : sprite.play("defense player")
-		States.die : sprite.play("die player")
+		States.idle: 
+			sprite.play("idle player")
+			
+		States.walk: 
+			sprite.play("walk player")
+		
+		States.jump: 
+			sprite.play("jump player")
+		
+		States.attack: 
+			sprite.play("attack player")
+			$"../AnimationPlayer".play("attack")
+		
+		States.defense: 
+			sprite.play("defense player")
+		
+		States.die: 
+			sprite.play("die player")
 	#if sprite.is_playing():
 		#await sprite.animation_finished
 func _on_animated_sprite_2d_animation_finished() -> void:

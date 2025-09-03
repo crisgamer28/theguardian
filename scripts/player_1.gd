@@ -10,8 +10,9 @@ const JUMP_VELOCITY := -300
 @onready var game_over_menu: CanvasLayer = %GameOverMenu
 @onready var barravida: TextureProgressBar = $Camera2D/Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
+var daño_player := 3
 var delay_die : float = 0.3
 
 var dead_anim_delay : float = 2.0 # Tiempo antes de que aparezca el menu game over
@@ -48,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	$StateMachine.update_state()
 	move_and_slide()
 	
-func restar_vidas(daño: int = 1):
+func restar_vidas(daño: int = 1): #permite bajar la vida del player
 	vidas -= daño
 	barravida.value = vidas
 	print("Recibiste daño! vidas: ", vidas)
@@ -63,5 +64,13 @@ func morir():
 	game_over_menu.show()
 
 
-func respawn():
+
+func respawn(): #esta funcion permite guardar el punto de guardado
 	global_position = checkpoint_position
+
+
+func _on_attack_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.take_damage(daño_player)
+		
+		

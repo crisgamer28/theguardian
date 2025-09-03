@@ -10,7 +10,7 @@ class_name Enemy
 
 @export var speed := 50
 @export var damage := 1
-@export var health = 1
+@export var health = 3
 
 var gravity : float = 25.0
 var direction := 1
@@ -39,23 +39,33 @@ func _physics_process(delta: float) -> void:
 		left_limit.position = left_pos
 	move_and_slide()
 	last_position = position
+
+
 func take_damage(amount : int):
-	if health <= 0:
-		return
 	health -= amount
-	if health > 0:
+	if 0 >= health:
 		die()
+
+
 func die():
 	animationPlayer.play("die")
 	await animationPlayer.animation_finished
 	queue_free() 
+
+
 #esta funcion hace que el enemigo ejecute ataque al player
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if body is Player1:
 		body.restar_vidas(damage)
 		animationPlayer.play("attack1")
+		
 
 #esta funcion hace que finalice el ataque y vuelva al estado walk
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack1":
 		animationPlayer.play("walk")
+		
+
+
+func _on_hitbox_sword_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
