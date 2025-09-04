@@ -15,6 +15,7 @@ class_name Enemy
 var gravity : float = 25.0
 var direction := 1
 var last_position: Vector2 = Vector2.ZERO
+var die_enemy : int = 1
 
 func _ready():
 	animationPlayer.play("walk")
@@ -39,15 +40,17 @@ func _physics_process(delta: float) -> void:
 		left_limit.position = left_pos
 	move_and_slide()
 	last_position = position
-
-
 func take_damage(amount : int):
 	health -= amount
+	animationPlayer.play("hurt")
+	await animationPlayer.animation_finished
+	_ready()
 	if 0 >= health:
 		die()
 
 
 func die():
+	set_physics_process(false)
 	animationPlayer.play("die")
 	await animationPlayer.animation_finished
 	queue_free() 

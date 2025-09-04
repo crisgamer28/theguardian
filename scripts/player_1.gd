@@ -12,13 +12,16 @@ const JUMP_VELOCITY := -300
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var daño_player := 3
+var daño_player := 1
 var delay_die : float = 0.3
 
 var dead_anim_delay : float = 2.0 # Tiempo antes de que aparezca el menu game over
 
 var checkpoint_position : Vector2 = Vector2.ZERO
 var spawn_position : Vector2
+
+@onready var attack: Area2D = $Attack
+
 
 func _ready() -> void:
 	spawn_position = global_position
@@ -39,7 +42,10 @@ func _physics_process(delta: float) -> void:
 		respawn()
 	if direction != 0:
 		sprite.flip_h = direction < 0
-		
+		if direction > 0:
+			attack.position.x = abs(attack.position.x)
+		else:
+			attack.position.x = -abs(attack.position.x)
 	#if not is_on_floor():
 		#sprite.play("jump player")
 	#elif direction != 0:
