@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxlyht05i4q6s"]
+
+[ext_resource type="Texture2D" uid="uid://ch66fuqfdxinq" path="res://assets/UI/01_Elements/02_Buttons_Animated.png" id="1_do640"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw1dp"]
+atlas = ExtResource("1_do640")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do640"]
+atlas = ExtResource("1_do640")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4m3q"]
+atlas = ExtResource("1_do640")
+region = Rect2(0, 32, 48, 16)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1160.0
+offset_bottom = 640.0
+color = Color(0.462745, 0.462745, 0.462745, 0.0196078)
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_cw1dp")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_do640")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_h4m3q")
+expand_mode = 5
