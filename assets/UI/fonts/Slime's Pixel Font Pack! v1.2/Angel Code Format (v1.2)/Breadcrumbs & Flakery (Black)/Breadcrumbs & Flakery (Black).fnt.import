@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://b31k3qn5h63cm"
+path="res://.godot/imported/Breadcrumbs & Flakery (Black).fnt-bb74301da98cbcddf8f24e252ad65f56.fontdata"
+
+[deps]
+
+source_file="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/Angel Code Format (v1.2)/Breadcrumbs & Flakery (Black)/Breadcrumbs & Flakery (Black).fnt"
+dest_files=["res://.godot/imported/Breadcrumbs & Flakery (Black).fnt-bb74301da98cbcddf8f24e252ad65f56.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

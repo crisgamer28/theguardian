@@ -7,8 +7,9 @@ const speed := 150.0
 const JUMP_VELOCITY := -300
 @export var vidas = 5
 
+
 @onready var game_over_menu: CanvasLayer = %GameOverMenu
-@onready var barravida: TextureProgressBar = $Camera2D/Barravida
+@onready var barravida: TextureProgressBar = %Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

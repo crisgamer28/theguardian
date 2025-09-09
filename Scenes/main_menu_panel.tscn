@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvk3s62hjsphh"]
+
+[ext_resource type="Script" uid="uid://xswj010eft21" path="res://scripts/game_over_panel.gd" id="1_l14yk"]
+[ext_resource type="Theme" uid="uid://cgghs4omko0oi" path="res://resources/temagameover.tres" id="2_cce2k"]
+[ext_resource type="FontFile" uid="uid://coaark3giryj7" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/Angel Code Format (v1.2)/Sol Schori Thin (White)/Sol Schori Thin(White).fnt" id="3_286qs"]
+[ext_resource type="FontFile" uid="uid://bg6g2c14lrknm" path="res://assets/UI/fonts/kenney_fonts/Kenney Pixel.ttf" id="4_nq7k0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1cqkm"]
+font = ExtResource("4_nq7k0")
+font_size = 131
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenuPanel" type="CanvasLayer"]
+script = ExtResource("1_l14yk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.909804, 0.113725, 0, 0.160784)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -117.5
+offset_right = 100.0
+offset_bottom = 117.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_cce2k")
+theme_override_constants/separation = 1
+
+[node name="GAME OVER" type="Label" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_286qs")
+theme_override_font_sizes/font_size = 175
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_1cqkm")
+max_lines_visible = 1
+
+[node name="Botones" type="PanelContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Botones"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Control/VBoxContainer/Botones/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "RETRY"
+
+[node name="OptionsButton" type="Button" parent="Control/VBoxContainer/Botones/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "OPTIONS"

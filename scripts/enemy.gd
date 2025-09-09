@@ -48,13 +48,11 @@ func take_damage(amount : int):
 	if 0 >= health:
 		die()
 
-
 func die():
 	set_physics_process(false)
 	animationPlayer.play("die")
 	await animationPlayer.animation_finished
 	queue_free() 
-
 
 #esta funcion hace que el enemigo ejecute ataque al player
 func _on_hitbox_body_entered(body: Node2D) -> void:

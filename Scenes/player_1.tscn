@@ -341,12 +341,7 @@ position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_tmdyv")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
-
-[node name="Barravida" parent="Camera2D" instance=ExtResource("5_aatkl")]
-offset_left = -190.0
-offset_top = -106.0
-offset_right = -133.0
-offset_bottom = -90.0
+zoom = Vector2(2.45, 2.45)
 
 [node name="Attack" type="Area2D" parent="."]
 position = Vector2(15, 9)
@@ -362,6 +357,15 @@ shape = SubResource("RectangleShape2D_aatkl")
 libraries = {
 &"": SubResource("AnimationLibrary_lp8rx")
 }
+
+[node name="Interfaz" type="CanvasLayer" parent="."]
+
+[node name="Barravida" parent="Interfaz" instance=ExtResource("5_aatkl")]
+unique_name_in_owner = true
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 74.0
+offset_bottom = 30.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
