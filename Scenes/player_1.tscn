@@ -281,7 +281,7 @@ animations = [{
 size = Vector2(10, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aatkl"]
-size = Vector2(20.5, 16)
+size = Vector2(30, 20)
 
 [sub_resource type="Animation" id="Animation_aatkl"]
 length = 0.001
@@ -341,16 +341,15 @@ position = Vector2(0, 9.5)
 shape = SubResource("RectangleShape2D_tmdyv")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
-zoom = Vector2(2.45, 2.45)
+zoom = Vector2(2, 2)
 
 [node name="Attack" type="Area2D" parent="."]
-position = Vector2(15, 9)
+position = Vector2(24, 10)
 collision_layer = 0
 collision_mask = 4
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-position = Vector2(6.75, 2)
 shape = SubResource("RectangleShape2D_aatkl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

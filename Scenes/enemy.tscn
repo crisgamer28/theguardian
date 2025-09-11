@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpuoi5p2i1g3v"]
+[gd_scene load_steps=20 format=3 uid="uid://cpuoi5p2i1g3v"]
 
 [ext_resource type="Script" uid="uid://dee3qcpo65qkj" path="res://scripts/enemy.gd" id="1_qi2p4"]
 [ext_resource type="Texture2D" uid="uid://nu580e3xiika" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="2_4gyqm"]
@@ -340,8 +340,11 @@ _data = {
 &"walk": SubResource("Animation_4gyqm")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dp5w"]
-size = Vector2(26.6961, 108.431)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uf12"]
+size = Vector2(18.3611, 258.552)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
+radius = 40.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -353,7 +356,8 @@ scale = Vector2(0.770833, 0.679688)
 texture = ExtResource("2_4gyqm")
 hframes = 10
 
-[node name="HitboxEnemy" type="CollisionShape2D" parent="."]
+[node name="Hitboxnormal" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(-2, 9)
 shape = SubResource("RectangleShape2D_auwsv")
 
@@ -364,15 +368,15 @@ libraries = {
 speed_scale = 0.325
 
 [node name="HitboxSword" type="Area2D" parent="."]
-position = Vector2(-1, 0)
+unique_name_in_owner = true
+position = Vector2(19, 1)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxSword"]
-position = Vector2(11.4973, 7.45996)
 rotation = -1.57187
 scale = Vector2(1.08926, 0.119892)
-shape = SubResource("RectangleShape2D_1dp5w")
+shape = SubResource("RectangleShape2D_8uf12")
 
 [node name="floor" type="RayCast2D" parent="."]
 position = Vector2(11, 0)
@@ -396,6 +400,15 @@ collide_with_areas = true
 [node name="StatesEnemy" type="Node" parent="."]
 script = ExtResource("8_auwsv")
 
+[node name="Sensor" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+shape = SubResource("CircleShape2D_auwsv")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="HitboxSword" to="." method="_on_hitbox_body_entered"]
-[connection signal="body_entered" from="HitboxSword" to="." method="_on_hitbox_sword_body_entered"]
+[connection signal="body_entered" from="Sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="body_exited" from="Sensor" to="." method="_on_sensor_body_exited"]

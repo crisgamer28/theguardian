@@ -83,6 +83,7 @@ pause={
 2d_physics/layer_6="enemy3 "
 2d_physics/layer_7="raycast"
 2d_physics/layer_8="checkpoint"
+2d_physics/layer_9="Sensor"
 
 [rendering]
 
