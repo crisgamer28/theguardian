@@ -26,6 +26,8 @@ func _ready():
 	animationPlayer.play("walk")
 
 func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y += get_gravity().y * delta
 	match current_states:
 		estados.patrulla:
 				velocity.x = direction * speed

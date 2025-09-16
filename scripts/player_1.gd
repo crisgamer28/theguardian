@@ -5,10 +5,11 @@ class_name Player1
 @onready var state_machine = $StateMachine
 const speed := 150.0
 const JUMP_VELOCITY := -300
-@export var vidas = 5
+
+@export var vidas = 5 # estas son las vidas que van bajando y te moris si llega a 0
+@export var VIDA_MAXIMA := 5 # este es el maximo de vida que tiene el jugador
 
 
-@onready var game_over_menu: CanvasLayer = %GameOverMenu
 @onready var barravida: TextureProgressBar = %Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -23,6 +24,7 @@ var spawn_position : Vector2
 
 @onready var attack: Area2D = $Attack
 
+signal personaje_murio
 
 func _ready() -> void:
 	spawn_position = global_position
@@ -68,11 +70,15 @@ func morir():
 	set_physics_process(false)
 	sprite.play("die player")
 	await sprite.animation_finished
-	game_over_menu.show()
+	personaje_murio.emit()
 
-
+func curar():
+	vidas = VIDA_MAXIMA
 
 func respawn(): #esta funcion permite guardar el punto de guardado
+	set_physics_process(true)
+	curar()
+	sprite.play("RESET")
 	global_position = checkpoint_position
 
 

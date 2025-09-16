@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://c3dcja41yl0io"]
+
+[ext_resource type="Shader" uid="uid://ta84tsokovot" path="res://Scenes/claseshader.gdshader" id="1_i2co2"]
+[ext_resource type="Texture2D" uid="uid://ctgpddbop7owo" path="res://niveles, mapas/q0skn759g5j71.webp" id="2_i2co2"]
+[ext_resource type="Shader" uid="uid://c6ajd1tqmq33x" path="res://Scenes/logo.gdshader" id="3_ewufm"]
+[ext_resource type="Texture2D" uid="uid://dsgn30g54hxqp" path="res://icon.svg" id="3_s1ekl"]
+[ext_resource type="Script" uid="uid://b6fxj6kykjo37" path="res://Scenes/logo.gd" id="5_2iksr"]
+[ext_resource type="Shader" uid="uid://bekpx6mgndaem" path="res://Scenes/noise.gdshader" id="6_ifxtr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1ekl"]
+shader = ExtResource("1_i2co2")
+shader_parameter/color = Color(1, 0, 0.45098, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2iksr"]
+shader = ExtResource("3_ewufm")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/flash_state = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_byk88"]
+shader = ExtResource("6_ifxtr")
+
+[sub_resource type="Curve" id="Curve_ifxtr"]
+_data = [Vector2(0, 0.483146), 0.0, -0.0518582, 0, 0, Vector2(0.194444, 0.449438), 0.0, 0.0, 0, 0, Vector2(0.516667, 0.820225), 1.40545, 1.40545, 0, 0, Vector2(0.711111, 0.550562), -1.63354, 0.0, 0, 0, Vector2(0.933333, 0.696629), 0.796732, 0.0, 0, 0, Vector2(1, 0.314607), -6.53414, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_colbf"]
+curve = SubResource("Curve_ifxtr")
+
+[sub_resource type="Animation" id="Animation_colbf"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.2]
+}
+
+[sub_resource type="Animation" id="Animation_eowmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:material:shader_parameter/flash_state")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f8xr3"]
+resource_name = "glass"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8xr3"]
+_data = {
+&"RESET": SubResource("Animation_eowmr"),
+&"flash": SubResource("Animation_colbf"),
+&"glass": SubResource("Animation_f8xr3")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_s1ekl")
+position = Vector2(332, 167)
+scale = Vector2(0.918333, 0.773809)
+texture = ExtResource("2_i2co2")
+
+[node name="Logo" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2iksr")
+position = Vector2(320, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_s1ekl")
+script = ExtResource("5_2iksr")
+
+[node name="Effect" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_byk88")
+position = Vector2(332, 152)
+scale = Vector2(1.11523, 82.248)
+texture = SubResource("CurveTexture_colbf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f8xr3")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,6 +1,12 @@
+class_name GameOverPanel
 extends CanvasLayer
 
 @export var scene_menu : PackedScene
+@onready var retry_button: Button = %RetryButton
+@onready var options_button: Button = %OptionsButton
+
+
+
 #func _input(event: InputEvent) -> void:
 	#if Input.is_action_pressed("pause"):
 		#visible = not visible
@@ -17,9 +23,9 @@ extends CanvasLayer
 #func _on_point_saved_pressed() -> void:
 	#pass
 
-
+#
 func _on_retry_button_pressed() -> void:
-	%RetryButton.get_tree().reload_current_scene()
+	hide()
 	
 
 

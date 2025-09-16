@@ -341,10 +341,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uf12"]
-size = Vector2(18.3611, 258.552)
+size = Vector2(28.4498, 104.101)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
-radius = 40.0
+radius = 35.2278
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -374,6 +374,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxSword"]
+position = Vector2(-9.2528, 5.50456)
 rotation = -1.57187
 scale = Vector2(1.08926, 0.119892)
 shape = SubResource("RectangleShape2D_8uf12")
