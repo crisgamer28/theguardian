@@ -1,6 +1,6 @@
 extends Node2D
 #https://itch.io/queue/c/3904913/killer-plants?game_id=836667&password=
-
+#https://nastanliev.itch.io/goblins
 
 @onready var player_1: Player1 = $Player1
 @onready var game_over_menu: GameOverPanel = %GameOverMenu

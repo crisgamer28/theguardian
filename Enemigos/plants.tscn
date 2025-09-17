@@ -1,0 +1,99 @@
+[gd_scene load_steps=15 format=3 uid="uid://cyeq4qq4ig4rk"]
+
+[ext_resource type="Texture2D" uid="uid://cfd01lfmaw1rc" path="res://Enemigos/Plants/PlantAlternate.png" id="1_ujx6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_keb25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb16t"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(0, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eewmi"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(96, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i756"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(192, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0a35"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(288, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkxa1"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(384, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6nbu"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(480, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnnsk"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(576, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32lqc"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(672, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn7nh"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(768, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16aul"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(864, 129, 96, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5dsk"]
+atlas = ExtResource("1_ujx6b")
+region = Rect2(960, 129, 96, 102)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_keb25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb16t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eewmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i756")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0a35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkxa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6nbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnnsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32lqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn7nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16aul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5dsk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Plants" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_keb25")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_keb25")
+frame_progress = 0.120295

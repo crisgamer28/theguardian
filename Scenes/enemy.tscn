@@ -341,7 +341,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uf12"]
-size = Vector2(28.4498, 104.101)
+size = Vector2(18.3542, 70.8005)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
 radius = 35.2278
@@ -369,12 +369,11 @@ speed_scale = 0.325
 
 [node name="HitboxSword" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(19, 1)
+position = Vector2(11, 1)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxSword"]
-position = Vector2(-9.2528, 5.50456)
 rotation = -1.57187
 scale = Vector2(1.08926, 0.119892)
 shape = SubResource("RectangleShape2D_8uf12")
@@ -405,9 +404,11 @@ script = ExtResource("8_auwsv")
 unique_name_in_owner = true
 collision_layer = 256
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
 shape = SubResource("CircleShape2D_auwsv")
+metadata/_edit_lock_ = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="HitboxSword" to="." method="_on_hitbox_body_entered"]
