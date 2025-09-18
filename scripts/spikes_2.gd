@@ -5,6 +5,8 @@ extends Area2D
 @export var damage := 5
 
 func _on_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		body.take_damage(damage)
 	if body is Player1:
 		body.restar_vidas(damage)
 		print("Chocaste con un pincho!")

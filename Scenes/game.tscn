@@ -35,7 +35,7 @@ position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_i6g32")
 
 [node name="Enemy" parent="." instance=ExtResource("6_i6g32")]
-position = Vector2(367, 10)
+position = Vector2(364, 43)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_i6g32")]
 position = Vector2(1018, 43)

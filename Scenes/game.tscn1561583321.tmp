@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1vi0w77pfodo"]
+
+[ext_resource type="Script" uid="uid://w5ds7k6jheyu" path="res://scripts/game.gd" id="1_i6g32"]
+[ext_resource type="PackedScene" uid="uid://ceapxigsjwfqo" path="res://Scenes/Nivel1.tscn" id="2_1l0tm"]
+[ext_resource type="Script" uid="uid://di3g1t2ebvy2n" path="res://scripts/pasaje.gd" id="5_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Scenes/player_1.tscn" id="6_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cpuoi5p2i1g3v" path="res://Scenes/enemy.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://cqopa6aq1lvox" path="res://Scenes/checkpoint.tscn" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://dtvyts8i016qc" path="res://Scenes/game_over_panel.tscn" id="7_v158k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6g32"]
+size = Vector2(34, 67.5)
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_i6g32")
+metadata/_edit_vertical_guides_ = [-184.0]
+
+[node name="Level1" parent="." groups=["Enemy"] instance=ExtResource("2_1l0tm")]
+metadata/_edit_lock_ = true
+
+[node name="Player1" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(21, -20)
+collision_mask = 285
+
+[node name="Pasaje" type="Area2D" parent="."]
+position = Vector2(2734, 26)
+collision_layer = 16
+collision_mask = 130
+script = ExtResource("5_ldgsr")
+next_scene_path = "res://Scenes/Nivel2.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pasaje"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i6g32")
+
+[node name="Enemy" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(139, 6)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(1018, 43)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(1331, -6)
+
+[node name="checkpoint" parent="." instance=ExtResource("7_1l0tm")]
+position = Vector2(60, -16)
+collision_layer = 128
+collision_mask = 2
+
+[node name="GameOverMenu" parent="." instance=ExtResource("7_v158k")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="body_entered" from="Pasaje" to="Pasaje" method="_on_body_entered"]

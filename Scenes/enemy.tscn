@@ -344,7 +344,7 @@ _data = {
 size = Vector2(18.3542, 70.8005)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
-radius = 35.2278
+radius = 122.69067
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -355,11 +355,13 @@ script = ExtResource("1_qi2p4")
 scale = Vector2(0.770833, 0.679688)
 texture = ExtResource("2_4gyqm")
 hframes = 10
+metadata/_edit_lock_ = true
 
 [node name="Hitboxnormal" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-2, 9)
 shape = SubResource("RectangleShape2D_auwsv")
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -372,29 +374,31 @@ unique_name_in_owner = true
 position = Vector2(11, 1)
 collision_layer = 4
 collision_mask = 2
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxSword"]
 rotation = -1.57187
 scale = Vector2(1.08926, 0.119892)
 shape = SubResource("RectangleShape2D_8uf12")
+metadata/_edit_lock_ = true
 
 [node name="floor" type="RayCast2D" parent="."]
-position = Vector2(11, 0)
-target_position = Vector2(0, 23)
+position = Vector2(5, 0)
+target_position = Vector2(0, 25)
 collide_with_areas = true
 
 [node name="floor2" type="RayCast2D" parent="."]
-position = Vector2(-14, 0)
-target_position = Vector2(0, 23)
+position = Vector2(-9, 0)
+target_position = Vector2(0, 25)
 
 [node name="left" type="RayCast2D" parent="."]
-position = Vector2(2, 9)
-target_position = Vector2(19, 0)
+position = Vector2(1, 15)
+target_position = Vector2(32, 0)
 collide_with_areas = true
 
 [node name="right" type="RayCast2D" parent="."]
-position = Vector2(-7, 9)
-target_position = Vector2(-18, 0)
+position = Vector2(-6, 15)
+target_position = Vector2(-25, 0)
 collide_with_areas = true
 
 [node name="StatesEnemy" type="Node" parent="."]
