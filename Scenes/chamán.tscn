@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd7eu3ve5ldp7"]
+
+[ext_resource type="Texture2D" uid="uid://b8ib5jxcbljlw" path="res://Scenes/Chamán .png" id="1_hd3f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd3f1"]
+size = Vector2(216, 248)
+
+[node name="Chamán" type="CharacterBody2D"]
+
+[node name="Chamán" type="Sprite2D" parent="."]
+texture = ExtResource("1_hd3f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_hd3f1")
