@@ -1,0 +1,10 @@
+extends StatePlayer
+
+func on_enter():
+	player.play_anim("idle player")
+
+func player_process():
+	if not player.is_on_floor():
+		state_manager.change_state("falling")
+	if Input.get_axis("left", "right") != 0:
+		state_manager.change_state("walk")

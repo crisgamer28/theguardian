@@ -2,9 +2,12 @@ extends CharacterBody2D
 class_name Player1
 ## Este es el jugador
 
+@onready var state_manager: Node = $StateManager
+
 @onready var state_machine = $StateMachine
 const speed := 150.0
 const JUMP_VELOCITY := -300
+var direccion : Vector2 = Vector2.ZERO
 
 @export var vidas = 5 # estas son las vidas que van bajando y te moris si llega a 0
 @export var VIDA_MAXIMA := 5 # este es el maximo de vida que tiene el jugador
@@ -26,38 +29,45 @@ var spawn_position : Vector2
 
 signal personaje_murio
 
+
+
 func _ready() -> void:
 	spawn_position = global_position
 	checkpoint_position = spawn_position
 
 
 func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-	if global_position.y > 800:
-		respawn()
-	if direction != 0:
-		sprite.flip_h = direction < 0
-		if direction > 0:
-			attack.position.x = abs(attack.position.x)
-		else:
-			attack.position.x = -abs(attack.position.x)
+	state_manager.current_state.player_process()
+	#if not is_on_floor():
+		#velocity += get_gravity() * delta
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
+	#var direction = Input.get_axis("left", "right")
+	#if direction:
+		#velocity.x = direction * speed
+	#else:
+		#velocity.x = move_toward(velocity.x, 0, speed)
+	#if global_position.y > 800:
+		#respawn()
+	#if direction != 0:
+		#sprite.flip_h = direction < 0
+		#if direction > 0:
+			#attack.position.x = abs(attack.position.x)
+		#else:
+			#attack.position.x = -abs(attack.position.x)
 	#if not is_on_floor():
 		#sprite.play("jump player")
 	#elif direction != 0:
 		#sprite.play("walk player")
 	#else:
 		#sprite.play("idle player")
-	$StateMachine.update_state()
+	#$StateMachine.update_state()
+	velocity = direccion * speed
 	move_and_slide()
-	
+
+func play_anim(anim:String):
+	sprite.play(anim)
+
 func restar_vidas(daño: int = 1): #permite bajar la vida del player
 	vidas -= daño
 	barravida.value = vidas

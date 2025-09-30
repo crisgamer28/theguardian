@@ -108,7 +108,7 @@ radius = 24.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_48865")
 animation = &"idle globin1"
-frame_progress = 0.772259
+frame_progress = 0.72851
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

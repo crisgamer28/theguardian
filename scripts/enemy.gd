@@ -11,6 +11,7 @@ class_name Enemy
 @export var speed := 50
 @export var damage := 1
 @export var health = 2
+@export var patrolling : bool = false
 
 
 var gravity : float = 25.0
@@ -28,29 +29,14 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += get_gravity().y * delta
-	velocity.x = direction * speed
 	match current_states:
 		estados.patrulla:
-				velocity.x = direction * speed
-	# Girar sprite según movimiento
-				sprite2D.flip_h = velocity.x < 0
-				if direction > 0:
-					hitbox.position.x = abs(hitbox.position.x)
+				if patrolling:
+					patrolling_movement()
 				else:
-					hitbox.position.x = -abs(hitbox.position.x)
-	# Cambiar de dirección si no hay piso o hay pared
-				if not floor_limit.is_colliding() or left_limit.is_colliding() or right_limit.is_colliding():
-					direction *= -1 
-					var floor_pos = floor_limit.position
-					floor_pos.x *= -1
-					floor_limit.position = floor_pos
-					var right_pos = right_limit.position
-					var left_pos = left_limit.position
-					right_pos.x *= -1
-					left_pos.x *= -1
-					right_limit.position = right_pos
-					left_limit.position = left_pos
+					animationPlayer.play("idle")
 		estados.chase:
+			animationPlayer.play("walk")
 			if Player1 != null:
 				var direction_to_player = sign(jugador.global_position.x - global_position.x)
 				velocity.x = direction_to_player * speed
@@ -91,6 +77,27 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		animationPlayer.play("walk")
 		
 
+func patrolling_movement():
+	animationPlayer.play("walk")
+	velocity.x = direction * speed
+# Girar sprite según movimiento
+	sprite2D.flip_h = velocity.x < 0
+	if direction > 0:
+		hitbox.position.x = abs(hitbox.position.x)
+	else:
+		hitbox.position.x = -abs(hitbox.position.x)
+# Cambiar de dirección si no hay piso o hay pared
+	if not floor_limit.is_colliding() or left_limit.is_colliding() or right_limit.is_colliding():
+		direction *= -1 
+		var floor_pos = floor_limit.position
+		floor_pos.x *= -1
+		floor_limit.position = floor_pos
+		var right_pos = right_limit.position
+		var left_pos = left_limit.position
+		right_pos.x *= -1
+		left_pos.x *= -1
+		right_limit.position = right_pos
+		left_limit.position = left_pos
 
 
 func _on_sensor_body_entered(body: Node2D) -> void:

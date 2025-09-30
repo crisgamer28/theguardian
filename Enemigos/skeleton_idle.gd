@@ -18,7 +18,7 @@ var die_enemy : int = 1
 var personaje: Player1 = null
 
 
-@export var speed := 100
+@export var speed := 500
 @export var damage := 1
 @export var health = 2
 
@@ -33,10 +33,7 @@ func _physics_process(delta: float) -> void:
 	#if not is_on_floor():
 		#velocity.y += get_gravity().y * delta
 	#sprite_skeleton.flip_h = velocity.x < 0
-	if direction > 0:
-		$"Sprite Skeleton".flip_h = false
-	if direction < 0:
-		$"Sprite Skeleton".flip_h = true
+
 
 	match estado_actual:
 		states2.idle:
@@ -44,13 +41,16 @@ func _physics_process(delta: float) -> void:
 			
 		states2.perseguir:
 			animation_player.play("walk white")
-			
-		estado_actual:
-			if personaje != null:
-				var dirección_a_jugador = sign(personaje.global_position.x - global_position.x)
-				velocity.x = dirección_a_jugador * speed
-				
-	velocity.x = speed * delta
+	if personaje != null:
+		direction = sign(personaje.global_position.x - global_position.x)
+		velocity.x = direction * delta * speed
+	else:
+		direction = 0
+		
+	if direction > 0:
+		$"Sprite Skeleton".flip_h = false
+	if direction < 0:
+		$"Sprite Skeleton".flip_h = true
 	last_position = position
 	move_and_slide()
 	

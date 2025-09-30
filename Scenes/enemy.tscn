@@ -344,7 +344,7 @@ _data = {
 size = Vector2(18.3542, 70.8005)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
-radius = 344.3719
+radius = 43.56604
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4

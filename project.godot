@@ -85,6 +85,10 @@ pause={
 2d_physics/layer_8="checkpoint"
 2d_physics/layer_9="Sensor"
 
+[physics]
+
+2d/physics_engine="GodotPhysics2D"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
