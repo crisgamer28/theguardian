@@ -1,5 +1,6 @@
 extends StatePlayer
 
+
 func on_enter():
 	player.play_anim("jump player")
 

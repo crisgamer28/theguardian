@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=51 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://assets/knight_character_pack_v3.0_by_rgsdev/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://pbv76wghxcyf" path="res://Scenes/cameraplayertscn.tscn" id="4_c4k0l"]
 [ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="5_aatkl"]
 [ext_resource type="Script" uid="uid://cbwvp3f3sgykp" path="res://Scenes/player_state_falling.gd" id="5_mndha"]
+[ext_resource type="Script" uid="uid://b2vuxnex11qjl" path="res://Scenes/state_jump.gd" id="6_2ympu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -330,13 +331,14 @@ collision_layer = 2
 collision_mask = 5
 floor_constant_speed = true
 floor_block_on_wall = false
-floor_max_angle = 3.1415927
+floor_max_angle = 1.701696
+floor_snap_length = 17.4
 script = ExtResource("1_tmdyv")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
-states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling")]
+states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump")]
 current_state = NodePath("StateIdle")
 
 [node name="StateIdle" type="Node" parent="StateManager"]
@@ -351,13 +353,16 @@ state_name = "walk"
 script = ExtResource("5_mndha")
 state_name = "falling"
 
+[node name="StateJump" type="Node" parent="StateManager"]
+script = ExtResource("6_2ympu")
+state_name = "Jump"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-4.54747e-13, -2.84217e-14)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
-animation = &"walk player"
-frame_progress = 0.32855037
+animation = &"jump player"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

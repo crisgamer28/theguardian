@@ -49,9 +49,9 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = move_toward(velocity.x, 0, speed)
 	#if global_position.y > 800:
 		#respawn()
-	#if direction != 0:
-		#sprite.flip_h = direction < 0
-		#if direction > 0:
+	if velocity.x != 0:
+		sprite.flip_h = velocity.x < 0
+	#if direction > 0:
 			#attack.position.x = abs(attack.position.x)
 		#else:
 			#attack.position.x = -abs(attack.position.x)
