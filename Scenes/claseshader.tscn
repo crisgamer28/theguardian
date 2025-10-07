@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://c3dcja41yl0io"]
 
-[ext_resource type="Shader" uid="uid://ta84tsokovot" path="res://Scenes/claseshader.gdshader" id="1_i2co2"]
+[ext_resource type="Shader" uid="uid://ta84tsokovot" path="res://resources/claseshader.gdshader" id="1_i2co2"]
 [ext_resource type="Texture2D" uid="uid://ctgpddbop7owo" path="res://niveles, mapas/q0skn759g5j71.webp" id="2_i2co2"]
-[ext_resource type="Shader" uid="uid://c6ajd1tqmq33x" path="res://Scenes/logo.gdshader" id="3_ewufm"]
+[ext_resource type="Shader" uid="uid://c6ajd1tqmq33x" path="res://resources/logo.gdshader" id="3_ewufm"]
 [ext_resource type="Texture2D" uid="uid://dsgn30g54hxqp" path="res://icon.svg" id="3_s1ekl"]
 [ext_resource type="Script" uid="uid://b6fxj6kykjo37" path="res://Scenes/logo.gd" id="5_2iksr"]
-[ext_resource type="Shader" uid="uid://bekpx6mgndaem" path="res://Scenes/noise.gdshader" id="6_ifxtr"]
+[ext_resource type="Shader" uid="uid://bekpx6mgndaem" path="res://resources/noise.gdshader" id="6_ifxtr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s1ekl"]
 shader = ExtResource("1_i2co2")

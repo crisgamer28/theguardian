@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xswj010eft21" path="res://scripts/game_over_panel.gd" id="1_lonnl"]
 [ext_resource type="FontFile" uid="uid://coaark3giryj7" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/Angel Code Format (v1.2)/Sol Schori Thin (White)/Sol Schori Thin(White).fnt" id="2_1cqkm"]
-[ext_resource type="PackedScene" uid="uid://b3s5ce0fpxtkm" path="res://Scenes/menú.tscn" id="2_313n5"]
+[ext_resource type="PackedScene" uid="uid://b3s5ce0fpxtkm" path="res://niveles, mapas/menú.tscn" id="2_313n5"]
 [ext_resource type="Theme" uid="uid://cgghs4omko0oi" path="res://resources/temagameover.tres" id="2_d8s8c"]
 [ext_resource type="FontFile" uid="uid://bg6g2c14lrknm" path="res://assets/UI/fonts/kenney_fonts/Kenney Pixel.ttf" id="4_1cqkm"]
 

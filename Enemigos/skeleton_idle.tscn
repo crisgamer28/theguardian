@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://ddh3sicnul6dw"]
 
 [ext_resource type="Script" uid="uid://c6gudhvfekxu1" path="res://Enemigos/skeleton_idle.gd" id="1_ba1en"]
-[ext_resource type="Texture2D" uid="uid://dbavy7qbvhp6" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Idle.png" id="1_j0ate"]
-[ext_resource type="Texture2D" uid="uid://nu580e3xiika" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="2_2s0j6"]
-[ext_resource type="Texture2D" uid="uid://ki3aqrq100kx" path="res://assets/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack1.png" id="3_1446d"]
-[ext_resource type="Script" uid="uid://bpytb8qrqscuj" path="res://Enemigos/states_idle.gd" id="5_g2gjh"]
+[ext_resource type="Texture2D" uid="uid://dbavy7qbvhp6" path="res://Enemigos/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Idle.png" id="1_j0ate"]
+[ext_resource type="Texture2D" uid="uid://nu580e3xiika" path="res://Enemigos/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Walk.png" id="2_2s0j6"]
+[ext_resource type="Texture2D" uid="uid://ki3aqrq100kx" path="res://Enemigos/Spritesheets/Skeletons_Free_Pack/Skeletons_Free_Pack/Skeleton_Sword/Skeleton_White/Skeleton_Without_VFX/Skeleton_01_White_Attack1.png" id="3_1446d"]
+[ext_resource type="Script" path="res://scripts/states/states_idle.gd" id="5_g2gjh"]
 
 [sub_resource type="Animation" id="Animation_1446d"]
 length = 0.001

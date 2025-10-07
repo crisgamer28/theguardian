@@ -6,7 +6,7 @@ class_name Player1
 
 @onready var state_machine = $StateMachine
 const speed := 150.0
-const JUMP_VELOCITY := -300
+const JUMP_VELOCITY := 300
 var direccion : Vector2 = Vector2.ZERO
 
 @export var vidas = 5 # estas son las vidas que van bajando y te moris si llega a 0
@@ -28,7 +28,7 @@ var spawn_position : Vector2
 @onready var attack: Area2D = $Attack
 
 signal personaje_murio
-
+var gravedad = 0.05
 
 
 func _ready() -> void:
@@ -62,7 +62,8 @@ func _physics_process(delta: float) -> void:
 	#else:
 		#sprite.play("idle player")
 	#$StateMachine.update_state()
-	velocity = direccion * speed
+	velocity.x = direccion.x * speed
+	velocity.y = direccion.y * JUMP_VELOCITY
 	move_and_slide()
 
 func play_anim(anim:String):
