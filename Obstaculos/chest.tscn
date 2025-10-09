@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btisafip7axtg"]
+[gd_scene load_steps=14 format=3 uid="uid://btisafip7axtg"]
 
 [ext_resource type="Script" uid="uid://epqg5v8e1rmi" path="res://Obstaculos/chest.gd" id="1_182ci"]
 [ext_resource type="Texture2D" uid="uid://v2o2ohcnb3va" path="res://Obstaculos/cofredef.png" id="1_bcbtr"]
@@ -18,11 +18,19 @@ atlas = ExtResource("1_bcbtr")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_182ci"]
+atlas = ExtResource("1_bcbtr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olcfl"]
 atlas = ExtResource("2_182ci")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8ka0"]
 atlas = ExtResource("3_q8ka0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u00n1"]
+atlas = ExtResource("1_bcbtr")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8vbst"]
@@ -46,15 +54,26 @@ animations = [{
 "texture": SubResource("AtlasTexture_182ci")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_olcfl")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_q8ka0")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u00n1")
+}],
+"loop": true,
+"name": &"static",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cywhx"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_182ci"]
+radius = 22.0
 
 [node name="Chest" type="Area2D"]
 collision_layer = 512
@@ -64,10 +83,12 @@ script = ExtResource("1_182ci")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8vbst")
 animation = &"close"
-speed_scale = 0.3
+frame = 2
+frame_progress = 1.0
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cywhx")
+shape = SubResource("CircleShape2D_182ci")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

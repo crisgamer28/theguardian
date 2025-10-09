@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=54 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://Personajes/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
@@ -302,6 +302,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soi14"]
+radius = 7.0
+height = 24.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aatkl"]
 size = Vector2(30, 20)
 
@@ -316,7 +320,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [false]
 }
 
@@ -332,7 +336,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 0.999819),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [false, true, false]
 }
 
@@ -382,13 +386,14 @@ unique_name_in_owner = true
 position = Vector2(-4.54747e-13, -2.84217e-14)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
-animation = &"fall"
-frame_progress = 0.9646971
+animation = &"attack player"
+frame = 6
+frame_progress = 1.0
 speed_scale = 2.0
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
-polygon = PackedVector2Array(-8, 3, 0, 11, 8, 3, 8, -8, -8, -8)
+shape = SubResource("CapsuleShape2D_soi14")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
 zoom = Vector2(1.5, 1.5)
@@ -419,5 +424,7 @@ offset_top = 14.0
 offset_right = 74.0
 offset_bottom = 30.0
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager/StateAttack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_entered" from="Attack" to="StateManager/StateAttack" method="_on_attack_body_entered"]

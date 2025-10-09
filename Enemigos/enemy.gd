@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 				var direction_to_player = sign(jugador.global_position.x - global_position.x)
 				velocity.x = direction_to_player * speed
 				sprite2D.flip_h = velocity.x < 0
-				if direction > 0:
+				if velocity.x > 0:
 					hitbox.position.x = abs(hitbox.position.x)
 				else:
 					hitbox.position.x = -abs(hitbox.position.x)

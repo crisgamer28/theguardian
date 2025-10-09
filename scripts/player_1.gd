@@ -51,10 +51,14 @@ func _physics_process(delta: float) -> void:
 		#respawn()
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
-	#if direction > 0:
-			#attack.position.x = abs(attack.position.x)
-		#else:
-			#attack.position.x = -abs(attack.position.x)
+		if velocity.x > 0:
+			attack.position.x = abs(attack.position.x)
+		else:
+			attack.position.x = -abs(attack.position.x)
+	#if velocity.x > 0:
+		#attack.global_position.x = abs(attack.global_position.x)
+	#else:
+		#attack.global_position.x = -abs(attack.glo.x)
 	#if not is_on_floor():
 		#sprite.play("jump player")
 	#elif direction != 0:
