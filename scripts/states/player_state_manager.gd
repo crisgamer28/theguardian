@@ -1,7 +1,7 @@
 extends StateManager
 
 @export var player : CharacterBody2D
-
+@export var ataque : Area2D
 
 
 func _ready() -> void:

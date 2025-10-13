@@ -355,9 +355,10 @@ floor_max_angle = 1.701696
 floor_snap_length = 17.4
 script = ExtResource("1_tmdyv")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "ataque", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
+ataque = NodePath("../Attack")
 states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack")]
 current_state = NodePath("StateIdle")
 
@@ -427,4 +428,3 @@ offset_bottom = 30.0
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager/StateAttack" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
-[connection signal="body_entered" from="Attack" to="StateManager/StateAttack" method="_on_attack_body_entered"]

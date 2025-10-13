@@ -344,7 +344,7 @@ _data = {
 size = Vector2(18.3542, 70.8005)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_auwsv"]
-radius = 43.56604
+radius = 16.03122
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
@@ -380,12 +380,12 @@ shape = SubResource("RectangleShape2D_8uf12")
 
 [node name="floor" type="RayCast2D" parent="."]
 position = Vector2(5, 0)
-target_position = Vector2(0, 25)
+target_position = Vector2(0, 22)
 collide_with_areas = true
 
 [node name="floor2" type="RayCast2D" parent="."]
 position = Vector2(-9, 0)
-target_position = Vector2(0, 25)
+target_position = Vector2(0, 22)
 
 [node name="left" type="RayCast2D" parent="."]
 position = Vector2(1, 15)
@@ -406,6 +406,7 @@ collision_layer = 256
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+position = Vector2(-1, 5)
 shape = SubResource("CircleShape2D_auwsv")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

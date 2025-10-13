@@ -48,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	last_position = position
 func take_damage(amount : int):
+	print("enemigo recibió daño")
 	health -= amount
 	animationPlayer.play("hurt")
 	await animationPlayer.animation_finished
