@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hyc2aycdhmlj"]
+
+[ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="1_s2qmp"]
+[ext_resource type="Texture2D" uid="uid://cpxgc7s5oc3ao" path="res://assets/UI/InterfazGuardian.png" id="2_u7nd8"]
+
+[node name="Interfaz" type="CanvasLayer"]
+
+[node name="Barravida" parent="." instance=ExtResource("1_s2qmp")]
+unique_name_in_owner = true
+offset_left = 56.0
+offset_top = 8.0
+offset_right = 113.0
+offset_bottom = 24.0
+
+[node name="InterfazGuardian" type="Sprite2D" parent="."]
+position = Vector2(40, 16)
+texture = ExtResource("2_u7nd8")

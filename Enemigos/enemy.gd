@@ -13,6 +13,7 @@ class_name Enemy
 @export var health = 2
 @export var patrolling : bool = false
 
+var hurt_anim = false
 
 var gravity : float = 25.0
 var direction := 1
@@ -34,9 +35,11 @@ func _physics_process(delta: float) -> void:
 				if patrolling:
 					patrolling_movement()
 				else:
-					animationPlayer.play("idle")
+					if not hurt_anim:
+						animationPlayer.play("idle")
 		estados.chase:
-			animationPlayer.play("walk")
+			if not hurt_anim:
+				animationPlayer.play("walk")
 			if Player1 != null:
 				var direction_to_player = sign(jugador.global_position.x - global_position.x)
 				velocity.x = direction_to_player * speed
@@ -48,13 +51,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	last_position = position
 func take_damage(amount : int):
+	hurt_anim = true
 	print("enemigo recibió daño")
 	health -= amount
 	animationPlayer.play("hurt")
+	print(health)
 	await animationPlayer.animation_finished
-	_ready()
 	if 0 >= health:
 		die()
+	hurt_anim = false
 
 func die():
 	%HitboxSword.queue_free()

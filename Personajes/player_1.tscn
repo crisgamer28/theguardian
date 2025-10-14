@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
 [ext_resource type="Script" uid="uid://bf16xl5qe0i44" path="res://scripts/states/player_state_walk.gd" id="3_vmi10"]
 [ext_resource type="PackedScene" uid="uid://pbv76wghxcyf" path="res://Scenes/cameraplayertscn.tscn" id="4_c4k0l"]
-[ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="5_aatkl"]
 [ext_resource type="Script" uid="uid://cbwvp3f3sgykp" path="res://scripts/states/player_state_falling.gd" id="5_mndha"]
 [ext_resource type="Script" uid="uid://b2vuxnex11qjl" path="res://scripts/states/state_jump.gd" id="6_2ympu"]
 [ext_resource type="Script" uid="uid://b4pbccrwgwidk" path="res://scripts/state_attack.gd" id="7_soi14"]
+[ext_resource type="PackedScene" uid="uid://hyc2aycdhmlj" path="res://assets/UI/interfaz.tscn" id="11_soi14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -355,10 +355,9 @@ floor_max_angle = 1.701696
 floor_snap_length = 17.4
 script = ExtResource("1_tmdyv")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "ataque", "states", "current_state")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
-ataque = NodePath("../Attack")
 states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack")]
 current_state = NodePath("StateIdle")
 
@@ -416,15 +415,7 @@ libraries = {
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_p0e4v")
 
-[node name="Interfaz" type="CanvasLayer" parent="."]
+[node name="Interfaz" parent="." instance=ExtResource("11_soi14")]
 
-[node name="Barravida" parent="Interfaz" instance=ExtResource("5_aatkl")]
-unique_name_in_owner = true
-offset_left = 17.0
-offset_top = 14.0
-offset_right = 74.0
-offset_bottom = 30.0
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager/StateAttack" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
