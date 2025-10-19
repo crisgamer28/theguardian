@@ -8,6 +8,7 @@ class_name Enemy
 @onready var sprite2D := $Sprite2D
 @onready var animationPlayer := $AnimationPlayer
 
+@export var velocidad : bool = false
 @export var speed := 50
 @export var damage := 1
 @export var health = 2

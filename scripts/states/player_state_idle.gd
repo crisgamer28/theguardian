@@ -11,7 +11,7 @@ func player_process():
 		state_manager.change_state("attack")
 	if Input.is_action_pressed("jump") and player.is_on_floor():
 		state_manager.change_state("Jump")
-		print("estoy saltando")
+		#print("estoy saltando")
 	if not player.is_on_floor():
 		state_manager.change_state("falling")
 	if Input.get_axis("left", "right") != 0:
