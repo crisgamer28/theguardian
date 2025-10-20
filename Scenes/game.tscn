@@ -17,14 +17,13 @@ script = ExtResource("1_i6g32")
 metadata/_edit_vertical_guides_ = [-184.0]
 
 [node name="Level1" parent="." groups=["Enemy"] instance=ExtResource("2_1l0tm")]
-metadata/_edit_lock_ = true
 
 [node name="Player1" parent="." instance=ExtResource("6_1l0tm")]
 position = Vector2(21, -20)
 collision_mask = 285
 
 [node name="Pasaje" type="Area2D" parent="."]
-position = Vector2(2657, -80)
+position = Vector2(2804, 47)
 collision_layer = 16
 collision_mask = 130
 script = ExtResource("5_ldgsr")
@@ -45,12 +44,18 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Enemy" parent="." instance=ExtResource("7_h4fw4")]
-position = Vector2(485, 42)
+position = Vector2(811, 42)
 
 [node name="Enemy2" parent="." instance=ExtResource("7_h4fw4")]
-position = Vector2(457, 43)
+position = Vector2(853, 42)
+
+[node name="Enemy3" parent="." instance=ExtResource("7_h4fw4")]
+position = Vector2(919, 43)
+
+[node name="Enemy4" parent="." instance=ExtResource("7_h4fw4")]
+position = Vector2(949, 42)
 
 [node name="Chest" parent="." instance=ExtResource("8_v158k")]
-position = Vector2(139, 24)
+position = Vector2(2259, -200)
 
 [connection signal="body_entered" from="Pasaje" to="Pasaje" method="_on_body_entered"]

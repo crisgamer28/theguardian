@@ -111,5 +111,4 @@ animation = &"idle globin1"
 frame_progress = 0.72851
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_4s6gk")

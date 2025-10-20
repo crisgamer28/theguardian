@@ -12,8 +12,9 @@ var direccion : Vector2 = Vector2.ZERO
 @export var vidas = 5 # estas son las vidas que van bajando y te moris si llega a 0
 @export var VIDA_MAXIMA := 5 # este es el maximo de vida que tiene el jugador
 
+#@onready var interfaz:= $Interfaz
 
-@onready var barravida: TextureProgressBar = %Barravida
+#@onready var barravida: TextureProgressBar = %Barravida
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -75,11 +76,10 @@ func play_anim(anim:String):
 
 func restar_vidas(daño: int = 1): #permite bajar la vida del player
 	vidas -= daño
-	barravida.value = vidas
+	$Interfaz/Barravida.value = vidas
 	print("Recibiste daño! vidas: ", vidas)
 	if vidas <= 0:
 		morir()
-
 ## Esta funcion se llama cuando el personaje muere
 func morir():
 	set_physics_process(false)

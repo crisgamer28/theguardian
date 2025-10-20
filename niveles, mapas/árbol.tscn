@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd8tshe3jql8e"]
+
+[ext_resource type="Texture2D" uid="uid://ds1gugj8gxgoj" path="res://niveles, mapas/arbol.png" id="1_i1h4m"]
+
+[node name="Árbol" type="Node2D"]
+
+[node name="Arbol" type="Sprite2D" parent="."]
+position = Vector2(0, -1.4305115e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("1_i1h4m")

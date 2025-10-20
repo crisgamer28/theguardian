@@ -11,7 +11,7 @@ func _ready() -> void:
 		state_dic[state.state_name] = state
 
 func change_state(state_name : String):
-	print(state_name)
+	#print(state_name)
 	current_state.on_exit()
 	current_state = state_dic[state_name]
 	current_state.on_enter()
