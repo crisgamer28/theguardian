@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb7newjercitk"
-path="res://.godot/imported/ChamanOriginal.png-884ad264e31cba48a139b191310cc036.ctex"
+uid="uid://dxq4flcb137gc"
+path="res://.godot/imported/Chaman.png-6c026b9493a6d7eb93098a6485abfd65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Personajes/ChamanOriginal.png"
-dest_files=["res://.godot/imported/ChamanOriginal.png-884ad264e31cba48a139b191310cc036.ctex"]
+source_file="res://Personajes/Chaman.png"
+dest_files=["res://.godot/imported/Chaman.png-6c026b9493a6d7eb93098a6485abfd65.ctex"]
 
 [params]
 

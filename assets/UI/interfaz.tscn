@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://hyc2aycdhmlj"]
+[gd_scene load_steps=4 format=3 uid="uid://hyc2aycdhmlj"]
 
 [ext_resource type="PackedScene" uid="uid://cumjpica6cgto" path="res://Scenes/barra_vida.tscn" id="1_s2qmp"]
+[ext_resource type="Script" uid="uid://dbjqpqoy6lsfw" path="res://assets/UI/interfaz.gd" id="1_u7nd8"]
 [ext_resource type="Texture2D" uid="uid://cpxgc7s5oc3ao" path="res://assets/UI/InterfazGuardian.png" id="2_u7nd8"]
 
 [node name="Interfaz" type="CanvasLayer"]
+script = ExtResource("1_u7nd8")
 
 [node name="Barravida" parent="." instance=ExtResource("1_s2qmp")]
 unique_name_in_owner = true
