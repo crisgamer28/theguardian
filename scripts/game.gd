@@ -4,12 +4,18 @@ extends Node2D
 
 @onready var player_1: Player1 = $Player1
 @onready var game_over_menu: GameOverPanel = %GameOverMenu
+@onready var gema: Area2D = $Gema
 
 
 #hola
 func _ready() -> void:
 	game_over_menu.retry_button.pressed.connect(reiniciar_nivel)
 	player_1.personaje_murio.connect(game_over_menu.show)
-
 func reiniciar_nivel():
 	get_tree().reload_current_scene()
+
+
+#func tomar_objeto():
+	#if Input.is_action_just_pressed("agarrar_gema"):
+		#player_1.curar()
+		#gema.queue_free()

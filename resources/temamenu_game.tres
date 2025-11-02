@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://rpsprvqdmw1r"]
+
+[ext_resource type="FontFile" uid="uid://1anfjwwt41uo" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/TrueType (one color versions)/Sol Schori Bold.ttf" id="1_ud7er"]
+[ext_resource type="Texture2D" uid="uid://nxux7vl5cfhj" path="res://assets/UI/01_Elements/BUTTONMenu.png" id="2_dqt4p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q3qh7"]
+texture = ExtResource("2_dqt4p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyynt"]
+texture = ExtResource("2_dqt4p")
+texture_margin_left = 10.0
+texture_margin_top = 14.0
+texture_margin_right = 10.0
+texture_margin_bottom = 14.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dqt4p"]
+texture = ExtResource("2_dqt4p")
+texture_margin_left = 10.0
+texture_margin_top = 14.0
+texture_margin_right = 10.0
+texture_margin_bottom = 14.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjseb"]
+texture = ExtResource("2_dqt4p")
+texture_margin_left = 10.0
+texture_margin_top = 14.0
+texture_margin_right = 10.0
+texture_margin_bottom = 14.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_ud7er")
+Button/styles/disabled = SubResource("StyleBoxTexture_q3qh7")
+Button/styles/hover = SubResource("StyleBoxTexture_eyynt")
+Button/styles/normal = SubResource("StyleBoxTexture_dqt4p")
+Button/styles/pressed = SubResource("StyleBoxTexture_gjseb")
