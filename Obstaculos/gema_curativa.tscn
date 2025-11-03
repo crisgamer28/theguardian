@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdl3os1qg1pgv"]
+
+[ext_resource type="Texture2D" uid="uid://d2th5b3rocy1k" path="res://Obstaculos/Gema Curativa.png" id="1_gj1mf"]
+
+[node name="GemaCurativa" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_gj1mf")

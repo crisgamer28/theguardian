@@ -31,7 +31,7 @@ window/stretch/mode="canvas_items"
 
 folder_colors={
 "res://Enemigos/": "teal",
-"res://Obstaculos, Objetos/": "gray",
+"res://Obstaculos/": "gray",
 "res://Personajes/": "yellow",
 "res://Scenes/": "green",
 "res://assets/": "blue",
@@ -81,11 +81,6 @@ pause={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
-agarrar_gema={
-"deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
-]
-}
 
 [layer_names]
 
@@ -98,7 +93,6 @@ agarrar_gema={
 2d_physics/layer_7="raycast"
 2d_physics/layer_8="checkpoint"
 2d_physics/layer_9="Sensor"
-2d_physics/layer_10="escudo"
 
 [physics]
 

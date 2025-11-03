@@ -7,8 +7,6 @@ func on_enter():
 func player_process():
 	#if Input.is_action_just_pressed("ataque"):
 		#state_manager.change_state("attack")
-	if Input.is_action_just_pressed("defense"):
-		state_manager.change_state("defensa")
 	if Input.is_action_just_pressed("ataque"):
 		state_manager.change_state("attack")
 	player.direccion.x = Input.get_axis("left", "right")

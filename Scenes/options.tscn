@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcuf3t1o82k15"]
+[gd_scene load_steps=7 format=3 uid="uid://dcuf3t1o82k15"]
 
 [ext_resource type="Script" uid="uid://dtdjbwsw3xvfv" path="res://scripts/options.gd" id="1_4tmxy"]
 [ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://assets/Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="2_qyyw6"]
-[ext_resource type="PackedScene" uid="uid://dcn1mwxx7g0po" path="res://menu_game.tscn" id="2_ww8vx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vd70p"]
 bg_color = Color(0.521366, 0.418442, 0.201381, 1)
@@ -24,7 +23,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4tmxy")
-menu = ExtResource("2_ww8vx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
