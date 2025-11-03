@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=57 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://Personajes/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
@@ -324,6 +324,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Escudo:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_c4k0l"]
 resource_name = "attack"
@@ -341,13 +353,32 @@ tracks/0/keys = {
 "values": [false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_xsm3u"]
+resource_name = "defenderse"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Escudo:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lp8rx"]
 _data = {
 &"RESET": SubResource("Animation_aatkl"),
-&"attack": SubResource("Animation_c4k0l")
+&"attack": SubResource("Animation_c4k0l"),
+&"defenderse": SubResource("Animation_xsm3u")
 }
 
-[node name="Player1" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsm3u"]
+size = Vector2(17, 26)
+
+[node name="Player1" type="CharacterBody2D" groups=["Player1"]]
 collision_layer = 2
 collision_mask = 5
 floor_constant_speed = true
@@ -359,7 +390,7 @@ script = ExtResource("1_tmdyv")
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
-states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack")]
+states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack"), NodePath("StateDefense")]
 current_state = NodePath("StateIdle")
 
 [node name="StateIdle" type="Node" parent="StateManager"]
@@ -384,16 +415,18 @@ state_name = "attack"
 
 [node name="StateDefense" type="Node" parent="StateManager"]
 script = ExtResource("8_xsm3u")
+state_name = "defensa"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-4.54747e-13, -2.84217e-14)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
-animation = &"idle player"
+animation = &"defense player"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_soi14")
 
@@ -401,6 +434,7 @@ shape = SubResource("CapsuleShape2D_soi14")
 zoom = Vector2(1.5, 1.5)
 
 [node name="Attack" type="Area2D" parent="."]
+visible = false
 position = Vector2(24, 10)
 collision_layer = 0
 collision_mask = 4
@@ -419,8 +453,22 @@ script = ExtResource("3_p0e4v")
 
 [node name="Interfaz" parent="." instance=ExtResource("11_soi14")]
 unique_name_in_owner = true
+visible = false
+
+[node name="Escudo" type="Area2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1, 8)
+collision_layer = 512
+collision_mask = 4
+monitoring = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Escudo"]
+shape = SubResource("RectangleShape2D_xsm3u")
+debug_color = Color(0.6901961, 0.36078432, 0.8745098, 0.11764706)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_entered" from="Escudo" to="." method="_on_escudo_body_entered"]
 
 [editable path="Interfaz"]

@@ -14,5 +14,5 @@ func player_process():
 		#player.velocity.y = -1
 	if player.direccion.x == 0:
 		state_manager.change_state("idle")
-	elif Input.is_action_pressed("jump") and player.is_on_floor():
+	elif Input.is_action_just_pressed("jump") and player.is_on_floor():
 			state_manager.change_state("Jump")

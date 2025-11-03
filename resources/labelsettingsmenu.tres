@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c8put63hvxy62"]
+
+[ext_resource type="FontFile" uid="uid://1anfjwwt41uo" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/TrueType (one color versions)/Sol Schori Bold.ttf" id="1_5q33i"]
+
+[resource]
+font = ExtResource("1_5q33i")
+font_size = 20
+shadow_color = Color(0, 0, 0, 1)

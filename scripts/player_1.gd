@@ -25,11 +25,16 @@ var spawn_position : Vector2
 
 @onready var attack: Area2D = $Attack
 
+
 signal personaje_murio
 signal vidas_cambiadas
 
 var gravedad = 0.05
+var inmune : bool = false
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("pause"):
+		interfaz._ready()
 
 func _ready() -> void:
 	vidas_cambiadas.connect(interfaz.actualizar_vida)
@@ -38,6 +43,7 @@ func _ready() -> void:
 		spawn_position = Globales.ultimo_checkpoint.global_position
 	else:
 		spawn_position = global_position
+	interfaz.visible = true
 
 
 func _physics_process(delta: float) -> void:
@@ -58,6 +64,9 @@ func play_anim(anim:String):
 	sprite.play(anim)
 
 func restar_vidas(daño: int = 1): #permite bajar la vida del player
+	if inmune:
+		print("esta bloqueando")
+		return
 	vidas -= daño
 	print("Recibiste daño! vidas: ", vidas)
 
@@ -91,4 +100,10 @@ func al_cambiar_vidas(vida_nueva: int):
 	
 	if 0 >= vidas:
 		morir()
-	
+		
+
+
+func _on_escudo_body_entered(body: Node2D) -> void:
+		if body is Enemy:
+			print("bloqueado")
+			
