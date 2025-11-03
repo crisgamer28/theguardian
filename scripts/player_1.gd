@@ -32,9 +32,9 @@ signal vidas_cambiadas
 var gravedad = 0.05
 var inmune : bool = false
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("pause"):
-		interfaz._ready()
+#func _input(event: InputEvent) -> void:
+	#if Input.is_action_pressed("pause"):
+		#interfaz._ready()
 
 func _ready() -> void:
 	vidas_cambiadas.connect(interfaz.actualizar_vida)

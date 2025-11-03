@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcn1mwxx7g0po"]
+[gd_scene load_steps=7 format=3 uid="uid://dcn1mwxx7g0po"]
 
 [ext_resource type="Script" uid="uid://o8lo35xhel2g" path="res://assets/UI/menu_game.gd" id="1_2mas8"]
 [ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://assets/Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="1_bwf0t"]
 [ext_resource type="Texture2D" uid="uid://cdm6347qu67nu" path="res://assets/UI/01_Elements/04_Box_Frames_9Patch.png" id="2_qlaj1"]
-[ext_resource type="PackedScene" uid="uid://b1vi0w77pfodo" path="res://Scenes/game.tscn" id="2_x4ohy"]
-[ext_resource type="PackedScene" uid="uid://dcuf3t1o82k15" path="res://Scenes/options.tscn" id="3_udbeu"]
 [ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="3_uuri4"]
 [ext_resource type="Theme" uid="uid://rpsprvqdmw1r" path="res://resources/temamenu_game.tres" id="4_2mas8"]
 
@@ -13,9 +11,8 @@ atlas = ExtResource("2_qlaj1")
 region = Rect2(57, 9, 30, 30)
 
 [node name="UImenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_2mas8")
-juego = ExtResource("2_x4ohy")
-opciones = ExtResource("3_udbeu")
 
 [node name="MenuGame" type="Control" parent="."]
 layout_mode = 3

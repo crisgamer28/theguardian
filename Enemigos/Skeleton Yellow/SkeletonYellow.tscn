@@ -399,7 +399,6 @@ script = ExtResource("7_vf1rs")
 
 [node name="IdleYellow" type="Node" parent="EstadoYellow"]
 script = ExtResource("8_qe7m3")
-state_name = null
 
 [node name="WalkYellow" type="Node" parent="EstadoYellow"]
 script = ExtResource("9_wwoc0")

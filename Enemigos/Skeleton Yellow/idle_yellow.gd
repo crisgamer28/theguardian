@@ -1,1 +1,1 @@
-extends StateYellow
+extends Node
