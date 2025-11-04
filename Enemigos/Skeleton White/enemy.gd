@@ -84,12 +84,15 @@ func take_damage(amount : int):
 	print("%s recibió %d puntos de daño. Le quedan %d" % nombre, amount, health)
 	
 	if health <= 0:
-		current_state = Estados.MURIENDO
-		attack_sensor.monitoring = false
-		%Sensor.hide()
-		%AttackSensor.hide()
-		%Hitboxnormal.hide()
+		morir()
 	#current_state = Estados.PATRULLA
+
+func morir():
+	current_state = Estados.MURIENDO
+	attack_sensor.monitoring = false
+	%Sensor.hide()
+	%AttackSensor.hide()
+	%Hitboxnormal.hide()
 
 
 #esta funcion hace que el enemigo ejecute ataque al player

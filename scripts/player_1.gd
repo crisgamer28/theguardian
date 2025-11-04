@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Player1
 ## Este es el jugador
 
+@export var estadisticas: PlayerStats
+
 @onready var state_manager: Node = $StateManager
 
 @onready var state_machine = $StateMachine
@@ -9,6 +11,7 @@ const speed := 150.0
 const JUMP_VELOCITY := 300
 var direccion : Vector2 = Vector2.ZERO
 
+@export_category("Vidas")
 @export var vidas = 5: set = al_cambiar_vidas # estas son las vidas que van bajando y te moris si llega a 0
 @export var VIDA_MAXIMA := 5 # este es el maximo de vida que tiene el jugador
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=59 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://Personajes/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
 [ext_resource type="Script" uid="uid://cwmxbaemb4ycg" path="res://scripts/states/player_state_idle.gd" id="2_jkush"]
+[ext_resource type="Script" uid="uid://hbuyjbqsxuwj" path="res://player_stats.gd" id="2_n1dgj"]
 [ext_resource type="Script" uid="uid://bbriw77ghouyu" path="res://scripts/states/player_state_manager.gd" id="2_vmi10"]
 [ext_resource type="Script" uid="uid://buoesifbw65rw" path="res://scripts/state_machine.gd" id="3_p0e4v"]
 [ext_resource type="Script" uid="uid://bf16xl5qe0i44" path="res://scripts/states/player_state_walk.gd" id="3_vmi10"]
@@ -12,6 +13,10 @@
 [ext_resource type="Script" uid="uid://b4pbccrwgwidk" path="res://scripts/state_attack.gd" id="7_soi14"]
 [ext_resource type="Script" uid="uid://bucfvdvu3kta2" path="res://scripts/states/state_defense.gd" id="8_xsm3u"]
 [ext_resource type="PackedScene" uid="uid://hyc2aycdhmlj" path="res://assets/UI/interfaz.tscn" id="11_soi14"]
+
+[sub_resource type="Resource" id="Resource_n1dgj"]
+script = ExtResource("2_n1dgj")
+metadata/_custom_type_script = "uid://hbuyjbqsxuwj"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p0e4v"]
 atlas = ExtResource("1_2mvbs")
@@ -386,6 +391,7 @@ floor_block_on_wall = false
 floor_max_angle = 1.701696
 floor_snap_length = 17.4
 script = ExtResource("1_tmdyv")
+estadisticas = SubResource("Resource_n1dgj")
 
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
 script = ExtResource("2_vmi10")
@@ -422,7 +428,7 @@ unique_name_in_owner = true
 position = Vector2(-4.54747e-13, -2.84217e-14)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_s1db0")
-animation = &"defense player"
+animation = &"idle player"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -457,6 +463,7 @@ visible = false
 
 [node name="Escudo" type="Area2D" parent="."]
 unique_name_in_owner = true
+visible = false
 position = Vector2(1, 8)
 collision_layer = 512
 collision_mask = 4
