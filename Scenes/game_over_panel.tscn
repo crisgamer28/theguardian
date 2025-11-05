@@ -2,21 +2,19 @@
 
 [ext_resource type="Script" uid="uid://xswj010eft21" path="res://scripts/game_over_panel.gd" id="1_lonnl"]
 [ext_resource type="FontFile" uid="uid://coaark3giryj7" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/Angel Code Format (v1.2)/Sol Schori Thin (White)/Sol Schori Thin(White).fnt" id="2_1cqkm"]
-[ext_resource type="PackedScene" uid="uid://b3s5ce0fpxtkm" path="res://niveles, mapas/menú.tscn" id="2_313n5"]
-[ext_resource type="Theme" uid="uid://cgghs4omko0oi" path="res://resources/temagameover.tres" id="2_d8s8c"]
-[ext_resource type="FontFile" uid="uid://bg6g2c14lrknm" path="res://assets/UI/fonts/kenney_fonts/Kenney Pixel.ttf" id="4_1cqkm"]
+[ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="5_313n5"]
+[ext_resource type="Theme" uid="uid://rpsprvqdmw1r" path="res://resources/temamenu_game.tres" id="5_j6haj"]
+[ext_resource type="Texture2D" uid="uid://cdm6347qu67nu" path="res://assets/UI/01_Elements/04_Box_Frames_9Patch.png" id="6_j6haj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_1cqkm"]
-font = ExtResource("4_1cqkm")
-font_size = 131
-outline_size = 20
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqmeq"]
+atlas = ExtResource("6_j6haj")
+region = Rect2(9, 9, 30, 30)
 
 [node name="GameOverPanel" type="CanvasLayer"]
 script = ExtResource("1_lonnl")
-scene_menu = ExtResource("2_313n5")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,6 +30,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -116.0
+offset_right = 120.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_jqmeq")
+
+[node name="GAME OVER" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 73.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_1cqkm")
+theme_override_font_sizes/font_size = 175
+text = "GAME OVER"
+label_settings = ExtResource("5_313n5")
+max_lines_visible = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -39,49 +71,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -117.5
-offset_right = 100.0
-offset_bottom = 117.5
+offset_left = -72.0
+offset_top = -84.0
+offset_right = 72.0
+offset_bottom = 116.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_d8s8c")
-theme_override_constants/separation = 1
+theme = ExtResource("5_j6haj")
+theme_override_constants/separation = 13
 
-[node name="GAME OVER" type="Label" parent="Control/VBoxContainer"]
+[node name="Reintentar" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_1cqkm")
-theme_override_font_sizes/font_size = 175
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_1cqkm")
-max_lines_visible = 1
+text = "Retry
+"
 
-[node name="Botones" type="PanelContainer" parent="Control/VBoxContainer"]
+[node name="Volver al Menú" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+text = "Back To Menu"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Botones"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-alignment = 1
-
-[node name="RetryButton" type="Button" parent="Control/VBoxContainer/Botones/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_mode = 0
-text = "RETRY"
-
-[node name="OptionsButton" type="Button" parent="Control/VBoxContainer/Botones/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_mode = 0
-text = "OPTIONS"
-
-[connection signal="pressed" from="Control/VBoxContainer/Botones/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Botones/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Volver al Menú" to="." method="_on_volver_al_menú_pressed"]

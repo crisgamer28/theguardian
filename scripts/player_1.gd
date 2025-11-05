@@ -6,8 +6,8 @@ class_name Player1
 
 @onready var state_manager: Node = $StateManager
 
-@onready var state_machine = $StateMachine
-const speed := 150.0
+@onready var state_mdachine = $StateMachine
+const speed := 110.0
 const JUMP_VELOCITY := 300
 var direccion : Vector2 = Vector2.ZERO
 
@@ -34,7 +34,7 @@ signal vidas_cambiadas
 
 var gravedad = 0.05
 var inmune : bool = false
-
+var velocidad_aumentada = 200
 #func _input(event: InputEvent) -> void:
 	#if Input.is_action_pressed("pause"):
 		#interfaz._ready()
@@ -48,10 +48,8 @@ func _ready() -> void:
 		spawn_position = global_position
 	interfaz.visible = true
 
-
 func _physics_process(delta: float) -> void:
 	state_manager.current_state.player_process()
-
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
 		if velocity.x > 0:
@@ -110,3 +108,4 @@ func _on_escudo_body_entered(body: Node2D) -> void:
 		if body is Enemy:
 			print("bloqueado")
 			
+	

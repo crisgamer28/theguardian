@@ -90,9 +90,7 @@ func take_damage(amount : int):
 func morir():
 	current_state = Estados.MURIENDO
 	attack_sensor.monitoring = false
-	%Sensor.hide()
-	%AttackSensor.hide()
-	%Hitboxnormal.hide()
+
 
 
 #esta funcion hace que el enemigo ejecute ataque al player

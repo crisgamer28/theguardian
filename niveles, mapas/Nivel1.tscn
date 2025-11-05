@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://ceapxigsjwfqo"]
+[gd_scene load_steps=27 format=4 uid="uid://ceapxigsjwfqo"]
 
 [ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="1_gn3e4"]
 [ext_resource type="Script" uid="uid://chn01kwkkxu1v" path="res://niveles, mapas/nivel_1.gd" id="1_rrgkk"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://ds1gugj8gxgoj" path="res://niveles, mapas/arbol.png" id="6_pgj47"]
 [ext_resource type="PackedScene" uid="uid://cpuoi5p2i1g3v" path="res://Enemigos/Skeleton White/enemy.tscn" id="8_64pu2"]
 [ext_resource type="Script" uid="uid://diyk75u5kx4i" path="res://Enemigos/contenedor_enemigos.gd" id="8_c0rc1"]
-[ext_resource type="PackedScene" uid="uid://chx75i8t2rw20" path="res://Enemigos/Skeleton Yellow/SkeletonYellow.tscn" id="9_c0rc1"]
 [ext_resource type="PackedScene" uid="uid://cdl3os1qg1pgv" path="res://Obstaculos, Objetos/Gema.tscn" id="10_hhded"]
 [ext_resource type="PackedScene" uid="uid://cqopa6aq1lvox" path="res://Obstaculos, Objetos/checkpoint.tscn" id="11_u2v3r"]
 [ext_resource type="Script" uid="uid://di3g1t2ebvy2n" path="res://scripts/pasaje.gd" id="12_24llu"]
@@ -4102,6 +4101,7 @@ texture = ExtResource("1_gn3e4")
 7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:6/0 = 0
 10:6/0 = 0
+10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:6/0 = 0
 15:6/0 = 0
 16:6/0 = 0
@@ -4469,8 +4469,23 @@ position = Vector2(919, 43)
 [node name="Enemy4" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
 position = Vector2(949, 42)
 
-[node name="SkeletonYellow" parent="ContenedorEnemigos" instance=ExtResource("9_c0rc1")]
-position = Vector2(224, 36)
+[node name="Enemy5" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(1292, -5)
+
+[node name="Enemy6" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(1361, -5)
+
+[node name="Enemy7" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(1547, -52)
+
+[node name="Enemy8" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(1619, -148)
+
+[node name="Enemy9" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(1900, -213)
+
+[node name="Enemy10" parent="ContenedorEnemigos" instance=ExtResource("8_64pu2")]
+position = Vector2(2078, -213)
 
 [node name="ContenedorGemas" type="Node2D" parent="."]
 position = Vector2(0, 1)
@@ -4522,4 +4537,26 @@ descripcion_inicial = "Derrota a %s enemigos"
 
 [node name="InterfazNivel" parent="." instance=ExtResource("15_u2v3r")]
 
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97748" to="TileMaps/Foregrounds/@Area2D@97748" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97749" to="TileMaps/Foregrounds/@Area2D@97749" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97750" to="TileMaps/Foregrounds/@Area2D@97750" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97751" to="TileMaps/Foregrounds/@Area2D@97751" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97752" to="TileMaps/Foregrounds/@Area2D@97752" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97753" to="TileMaps/Foregrounds/@Area2D@97753" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97754" to="TileMaps/Foregrounds/@Area2D@97754" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97755" to="TileMaps/Foregrounds/@Area2D@97755" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97756" to="TileMaps/Foregrounds/@Area2D@97756" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97757" to="TileMaps/Foregrounds/@Area2D@97757" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97758" to="TileMaps/Foregrounds/@Area2D@97758" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97759" to="TileMaps/Foregrounds/@Area2D@97759" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97760" to="TileMaps/Foregrounds/@Area2D@97760" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97761" to="TileMaps/Foregrounds/@Area2D@97761" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97762" to="TileMaps/Foregrounds/@Area2D@97762" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97763" to="TileMaps/Foregrounds/@Area2D@97763" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97764" to="TileMaps/Foregrounds/@Area2D@97764" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97765" to="TileMaps/Foregrounds/@Area2D@97765" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97766" to="TileMaps/Foregrounds/@Area2D@97766" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97767" to="TileMaps/Foregrounds/@Area2D@97767" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97768" to="TileMaps/Foregrounds/@Area2D@97768" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@97769" to="TileMaps/Foregrounds/@Area2D@97769" method="_on_body_entered"]
 [connection signal="body_entered" from="ContenedorCheckpoints/Pasaje" to="ContenedorCheckpoints/Pasaje" method="_on_body_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1vi0w77pfodo"]
+[gd_scene load_steps=9 format=3 uid="uid://b1vi0w77pfodo"]
 
 [ext_resource type="Script" uid="uid://w5ds7k6jheyu" path="res://scripts/game.gd" id="1_i6g32"]
 [ext_resource type="PackedScene" uid="uid://ceapxigsjwfqo" path="res://niveles, mapas/Nivel1.tscn" id="2_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Personajes/player_1.tscn" id="6_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://d0c1cselxyirc" path="res://Obstaculos, Objetos/habilidad_furia.tscn" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://dtvyts8i016qc" path="res://Scenes/game_over_panel.tscn" id="7_v158k"]
 [ext_resource type="PackedScene" uid="uid://btisafip7axtg" path="res://Obstaculos, Objetos/chest.tscn" id="8_v158k"]
 [ext_resource type="Script" uid="uid://cwfu1dyk2f6xo" path="res://Scenes/limite_mundo.gd" id="9_h4fw4"]
@@ -41,4 +42,10 @@ unique_name_in_owner = true
 position = Vector2(28, -17)
 collision_mask = 285
 
+[node name="HabilidadFuria" parent="." instance=ExtResource("7_1l0tm")]
+position = Vector2(109, 5)
+collision_layer = 0
+collision_mask = 2
+
 [connection signal="body_entered" from="LimiteMundo" to="LimiteMundo" method="_on_body_entered"]
+[connection signal="visibility_changed" from="HabilidadFuria" to="HabilidadFuria" method="_on_visibility_changed"]

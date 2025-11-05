@@ -8,7 +8,7 @@ extends Resource
 @export var velocidad_movimiento := 100
 @export var velocidad_ataque := 100
 @export var fuerza := 1
-
+@export var furia := 1
 
 
 var vidas_actuales = vida_maxima

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=60 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://Personajes/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b2vuxnex11qjl" path="res://scripts/states/state_jump.gd" id="6_2ympu"]
 [ext_resource type="Script" uid="uid://b4pbccrwgwidk" path="res://scripts/state_attack.gd" id="7_soi14"]
 [ext_resource type="Script" uid="uid://bucfvdvu3kta2" path="res://scripts/states/state_defense.gd" id="8_xsm3u"]
+[ext_resource type="Script" uid="uid://wdspmb5p45kn" path="res://scripts/states/state_fury.gd" id="10_2coj5"]
 [ext_resource type="PackedScene" uid="uid://hyc2aycdhmlj" path="res://assets/UI/interfaz.tscn" id="11_soi14"]
 
 [sub_resource type="Resource" id="Resource_n1dgj"]
@@ -396,7 +397,7 @@ estadisticas = SubResource("Resource_n1dgj")
 [node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
-states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack"), NodePath("StateDefense")]
+states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack"), NodePath("StateDefense"), NodePath("StateFury")]
 current_state = NodePath("StateIdle")
 
 [node name="StateIdle" type="Node" parent="StateManager"]
@@ -422,6 +423,10 @@ state_name = "attack"
 [node name="StateDefense" type="Node" parent="StateManager"]
 script = ExtResource("8_xsm3u")
 state_name = "defensa"
+
+[node name="StateFury" type="Node" parent="StateManager"]
+script = ExtResource("10_2coj5")
+state_name = "fury"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

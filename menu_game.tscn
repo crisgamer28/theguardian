@@ -77,7 +77,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("4_2mas8")
-theme_override_constants/separation = 10
+theme_override_constants/separation = 18
 
 [node name="Jugar" type="Button" parent="MenuGame/VBoxContainer"]
 layout_mode = 2

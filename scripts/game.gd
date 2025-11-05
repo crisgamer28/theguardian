@@ -9,9 +9,9 @@ extends Node2D
 
 #hola
 func _ready() -> void:
-	game_over_menu.retry_button.pressed.connect(reiniciar_nivel)
+	game_over_menu.reintentar.pressed.connect(reiniciar_nivel)
 	player_1.personaje_murio.connect(game_over_menu.show)
-	
+	get_tree().paused = false
 	
 func reiniciar_nivel():
 	get_tree().reload_current_scene()
