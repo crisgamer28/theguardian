@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="guardian"
-run/main_scene="uid://b1vi0w77pfodo"
+run/main_scene="uid://dcn1mwxx7g0po"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -109,6 +109,7 @@ fury={
 2d_physics/layer_8="checkpoint"
 2d_physics/layer_9="Sensor"
 2d_physics/layer_10="escudo"
+2d_physics/layer_11="coleccionable"
 
 [physics]
 

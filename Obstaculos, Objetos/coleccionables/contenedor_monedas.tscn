@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5wmi5jnd5cu"]
+
+[ext_resource type="Script" uid="uid://bcwapyw4x12my" path="res://Obstaculos, Objetos/coleccionables/contenedor_monedas.gd" id="1_eq2gh"]
+
+[node name="ContenedorMonedas" type="Node"]
+script = ExtResource("1_eq2gh")

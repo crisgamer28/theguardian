@@ -1,7 +1,15 @@
-[gd_scene format=3 uid="uid://chmlauhi346ma"]
+[gd_scene load_steps=2 format=3 uid="uid://chmlauhi346ma"]
+
+[ext_resource type="Script" uid="uid://bikeuxhw36eho" path="res://Scenes/interfaz/interfaz_nivel.gd" id="1_eaynk"]
 
 [node name="InterfazNivel" type="CanvasLayer"]
+script = ExtResource("1_eaynk")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
 offset_bottom = 23.0
+grow_horizontal = 2

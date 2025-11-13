@@ -4,6 +4,8 @@ extends Node
 var jugador: Player1
 
 var ultimo_checkpoint: Checkpoint
+signal actualizar_mision(objetivo)
+signal agarrar_monedas(cantidad)
 
 # Direcciones / Paths de ESCENAS
 const GAME = "uid://b1vi0w77pfodo"

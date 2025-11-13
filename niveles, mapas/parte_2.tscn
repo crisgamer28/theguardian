@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://6yuus08bjf53"]
+[gd_scene load_steps=12 format=4 uid="uid://6yuus08bjf53"]
 
 [ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="1_bajsm"]
 [ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_2.png" id="2_veddx"]
 [ext_resource type="Texture2D" uid="uid://bhoodyt77wfb1" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_1.png" id="3_qaj4n"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Personajes/player_1.tscn" id="4_veddx"]
-[ext_resource type="PackedScene" uid="uid://deh0j64u0nkgg" path="res://Enemigos/SkeletonDark/enemy_3.tscn" id="5_qaj4n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qaj4n"]
 texture = ExtResource("2_veddx")
@@ -1839,9 +1838,4 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAA
 tile_set = SubResource("TileSet_00fvj")
 
 [node name="Player1" parent="." instance=ExtResource("4_veddx")]
-position = Vector2(356, -132)
-
-[node name="Enemy3" parent="." instance=ExtResource("5_qaj4n")]
-position = Vector2(524, -128)
-collision_layer = 4
-collision_mask = 3
+position = Vector2(-124, -20)

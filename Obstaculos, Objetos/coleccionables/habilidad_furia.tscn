@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0c1cselxyirc"]
 
-[ext_resource type="Script" uid="uid://chps1xupp7waq" path="res://Obstaculos, Objetos/habilidad_furia.gd" id="1_bqwas"]
+[ext_resource type="Script" uid="uid://chps1xupp7waq" path="res://Obstaculos, Objetos/coleccionables/habilidad_furia.gd" id="1_bqwas"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bn56m"]
 radius = 31.016125

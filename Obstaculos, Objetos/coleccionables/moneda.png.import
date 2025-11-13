@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2th5b3rocy1k"
-path="res://.godot/imported/Gema Curativa.png-79fbe8d9d39bcf918ecdc1dc6d21b01f.ctex"
+uid="uid://ce3ba146fpcyv"
+path="res://.godot/imported/moneda.png-fbb319d478f36cb6644ea2b7447faa3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Obstaculos, Objetos/Gema Curativa.png"
-dest_files=["res://.godot/imported/Gema Curativa.png-79fbe8d9d39bcf918ecdc1dc6d21b01f.ctex"]
+source_file="res://Obstaculos, Objetos/coleccionables/moneda.png"
+dest_files=["res://.godot/imported/moneda.png-fbb319d478f36cb6644ea2b7447faa3c.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://txcplk4msayd"]
+[gd_scene load_steps=61 format=3 uid="uid://txcplk4msayd"]
 
 [ext_resource type="Texture2D" uid="uid://hel717j1tsg7" path="res://Personajes/knight_character_pack_v3.0_by_rgsdev/16x16 knight 3 v3.png" id="1_2mvbs"]
 [ext_resource type="Script" uid="uid://dh3y0dtdap42t" path="res://scripts/player_1.gd" id="1_tmdyv"]
@@ -384,9 +384,13 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xsm3u"]
 size = Vector2(17, 26)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2coj5"]
+radius = 7.0
+height = 24.0
+
 [node name="Player1" type="CharacterBody2D" groups=["Player1"]]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 1029
 floor_constant_speed = true
 floor_block_on_wall = false
 floor_max_angle = 1.701696
@@ -437,7 +441,6 @@ animation = &"idle player"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_soi14")
 
@@ -445,7 +448,6 @@ shape = SubResource("CapsuleShape2D_soi14")
 zoom = Vector2(1.5, 1.5)
 
 [node name="Attack" type="Area2D" parent="."]
-visible = false
 position = Vector2(24, 10)
 collision_layer = 0
 collision_mask = 4
@@ -478,6 +480,14 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Escudo"]
 shape = SubResource("RectangleShape2D_xsm3u")
 debug_color = Color(0.6901961, 0.36078432, 0.8745098, 0.11764706)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_2coj5")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="StateManager" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
