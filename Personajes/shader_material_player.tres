@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b56es35mg1g7h"]
+
+[ext_resource type="Shader" uid="uid://bo5pcm61dcpyc" path="res://Personajes/player_1.tres" id="1_qk1qa"]
+
+[resource]
+shader = ExtResource("1_qk1qa")

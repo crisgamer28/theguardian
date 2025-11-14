@@ -14,7 +14,6 @@ var direccion : Vector2 = Vector2.ZERO
 @export_category("Vidas")
 @export var vidas = 5: set = al_cambiar_vidas # estas son las vidas que van bajando y te moris si llega a 0
 @export var VIDA_MAXIMA := 5 # este es el maximo de vida que tiene el jugador
-
 @onready var interfaz: Interfaz = %Interfaz
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -29,8 +28,15 @@ var spawn_position : Vector2
 @onready var attack: Area2D = $Attack
 
 
+var furia : bool = false
+var furia_duracion = 1.0
+@export var efecto_rojo : ShaderMaterial 
+@onready var timer: Timer = $Timer
+
+
 signal personaje_murio
 signal vidas_cambiadas
+
 
 var gravedad = 0.05
 var inmune : bool = false
@@ -39,7 +45,9 @@ var velocidad_aumentada = 200
 	#if Input.is_action_pressed("pause"):
 		#interfaz._ready()
 
+
 func _ready() -> void:
+	timer.timeout.connect(_on_timeout)
 	vidas_cambiadas.connect(interfaz.actualizar_vida)
 	
 	if Globales.ultimo_checkpoint:
@@ -60,6 +68,20 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direccion.x * speed
 	velocity.y = direccion.y * JUMP_VELOCITY
 	move_and_slide()
+
+	
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("fury"):
+		timer.start(2.0)
+		furia = true
+		print("algo se presionó")
+		sprite.material = efecto_rojo
+		
+func _on_timeout():
+	furia = false
+	sprite.material = null
+	print("Timer has finished!")  
 
 func play_anim(anim:String):
 	sprite.play(anim)
@@ -92,6 +114,12 @@ func respawn(): #esta funcion permite guardar el punto de guardado
 func _on_attack_body_entered(body: Node2D) -> void:
 	if body is Enemy:
 		body.take_damage(daño_player)
+		if furia == true:
+			daño_player = 10
+			body.take_damage(daño_player)
+		else:
+			daño_player = 1
+			print(daño_player)
 
 
 ## Setter de las vidas
@@ -107,5 +135,3 @@ func al_cambiar_vidas(vida_nueva: int):
 func _on_escudo_body_entered(body: Node2D) -> void:
 		if body is Enemy:
 			print("bloqueado")
-			
-	
