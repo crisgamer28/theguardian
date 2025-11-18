@@ -32,7 +32,7 @@ var furia : bool = false
 var furia_duracion = 1.0
 @export var efecto_rojo : ShaderMaterial 
 @onready var timer: Timer = $Timer
-
+var furia_adquirida = false
 
 signal personaje_murio
 signal vidas_cambiadas
@@ -69,15 +69,16 @@ func _physics_process(delta: float) -> void:
 	velocity.y = direccion.y * JUMP_VELOCITY
 	move_and_slide()
 
-	
+func entrar_furia():
+	furia_adquirida = true
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("fury"):
+	if Input.is_action_just_pressed("fury") and furia_adquirida:
 		timer.start(2.0)
 		furia = true
-		print("algo se presionó")
+		#print("algo se presionó")
 		sprite.material = efecto_rojo
-		
+		#
 func _on_timeout():
 	furia = false
 	sprite.material = null

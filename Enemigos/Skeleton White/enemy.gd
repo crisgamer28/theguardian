@@ -14,7 +14,7 @@ class_name Enemy
 #@export var velocidad : bool = false
 @export var speed := 50
 @export var damage := 1
-@export var health = 2
+@export var health = 3
 @export var patrolling : bool = false
 
 #var hurt_anim := false
@@ -90,6 +90,7 @@ func take_damage(amount : int):
 func morir():
 	current_state = Estados.MURIENDO
 	attack_sensor.monitoring = false
+	sensor.monitoring = false
 
 
 

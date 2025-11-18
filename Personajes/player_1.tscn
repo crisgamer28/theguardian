@@ -400,10 +400,11 @@ script = ExtResource("1_tmdyv")
 estadisticas = SubResource("Resource_n1dgj")
 efecto_rojo = ExtResource("11_nilus")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "states", "current_state")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("player", "timer", "states", "current_state")]
 script = ExtResource("2_vmi10")
 player = NodePath("..")
-states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack"), NodePath("StateDefense"), NodePath("StateFury")]
+timer = NodePath("../Timer")
+states = [NodePath("StateIdle"), NodePath("StateWalk"), NodePath("StateFalling"), NodePath("StateJump"), NodePath("StateAttack"), NodePath("HabilityDefense"), NodePath("StateFury")]
 current_state = NodePath("StateIdle")
 
 [node name="StateIdle" type="Node" parent="StateManager"]
@@ -426,7 +427,7 @@ state_name = "Jump"
 script = ExtResource("7_soi14")
 state_name = "attack"
 
-[node name="StateDefense" type="Node" parent="StateManager"]
+[node name="HabilityDefense" type="Node" parent="StateManager"]
 script = ExtResource("8_xsm3u")
 state_name = "defensa"
 

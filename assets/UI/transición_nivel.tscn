@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://ehfskq01jd8l"]
+
+[ext_resource type="Script" uid="uid://jeii6w7grs2f" path="res://assets/UI/transición_nivel.gd" id="1_euori"]
+[ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="1_jv4g2"]
+[ext_resource type="FontFile" uid="uid://1anfjwwt41uo" path="res://assets/UI/fonts/Slime's Pixel Font Pack! v1.2/TrueType (one color versions)/Sol Schori Bold.ttf" id="3_p767g"]
+
+[node name="TransiciónNivel" type="CanvasLayer"]
+script = ExtResource("1_euori")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 637.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NIVEL 2"
+label_settings = ExtResource("1_jv4g2")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 28.0
+offset_right = 84.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_p767g")
+theme_override_font_sizes/font_size = 12
+text = "Submundo"
+horizontal_alignment = 1
+vertical_alignment = 1

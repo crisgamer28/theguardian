@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq02i0c36qo53"]
+
+[ext_resource type="Texture2D" uid="uid://ce3ba146fpcyv" path="res://Obstaculos, Objetos/coleccionables/monedas/moneda.png" id="1_6yl4v"]
+[ext_resource type="Script" uid="uid://ckq64lhv35xne" path="res://Obstaculos, Objetos/coleccionables/monedas/moneda_2.gd" id="1_mojj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btmi4"]
+
+[node name="Moneda2" type="Area2D"]
+monitorable = false
+script = ExtResource("1_mojj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6yl4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_btmi4")

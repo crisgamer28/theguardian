@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dcn1mwxx7g0po"]
 
 [ext_resource type="Script" uid="uid://o8lo35xhel2g" path="res://assets/UI/menu_game.gd" id="1_2mas8"]
-[ext_resource type="Texture2D" uid="uid://ca374srtcxcu" path="res://assets/Otros Tilemaps/360_F_986546394_d3jsxWIbjIcANAs4evAM6x9QsC5n2EVS.jpg" id="1_bwf0t"]
 [ext_resource type="Texture2D" uid="uid://cdm6347qu67nu" path="res://assets/UI/01_Elements/04_Box_Frames_9Patch.png" id="2_qlaj1"]
 [ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="3_uuri4"]
 [ext_resource type="Theme" uid="uid://rpsprvqdmw1r" path="res://resources/temamenu_game.tres" id="4_2mas8"]
+[ext_resource type="Texture2D" uid="uid://2qsj4ool16dv" path="res://assets/FONDOLOGO.png" id="5_2mas8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuri4"]
 atlas = ExtResource("2_qlaj1")
@@ -24,16 +24,22 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="MenuGame"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1.5
-offset_right = 1.5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_bwf0t")
+texture = ExtResource("5_2mas8")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="MenuGame"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -50,11 +56,16 @@ size_flags_vertical = 4
 texture = SubResource("AtlasTexture_uuri4")
 
 [node name="Label" type="Label" parent="MenuGame"]
-layout_mode = 0
-offset_left = 208.0
-offset_top = 40.0
-offset_right = 426.0
-offset_bottom = 60.0
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_top = 24.0
+offset_right = 180.0
+offset_bottom = 56.0
+grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 text = "THE GUARDIAN 1"
@@ -63,16 +74,13 @@ horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuGame"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -76.0
-offset_right = 70.0
-offset_bottom = 76.0
-grow_horizontal = 2
+offset_left = 32.0
+offset_top = -84.0
+offset_right = 172.0
+offset_bottom = 84.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

@@ -1,6 +1,7 @@
 extends StateManager
 
 @export var player : CharacterBody2D
+@export var timer : Timer
 
 func _ready() -> void:
 	for state in states:

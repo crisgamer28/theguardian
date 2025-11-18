@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmo10ppqn6sgl"]
+
+[ext_resource type="Script" uid="uid://cxy5wui3s0gbw" path="res://Obstaculos, Objetos/coleccionables/habilidades/item_furia.gd" id="1_7u73t"]
+[ext_resource type="Texture2D" uid="uid://cpcy2xlb2wlxx" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/orange/loops/burning_loop_3.png" id="2_r3rww"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7r1e"]
+radius = 13.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkgph"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(0, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ba0s"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(15, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui7fh"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(30, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnqt7"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(45, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf6mg"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(60, 0, 15, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ks7n"]
+atlas = ExtResource("2_r3rww")
+region = Rect2(75, 0, 15, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6768c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkgph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ba0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui7fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnqt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf6mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ks7n")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="ItemFuria" type="Area2D"]
+collision_layer = 1024
+collision_mask = 2
+script = ExtResource("1_7u73t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c7r1e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.0187511, 0.016363742, 0.5837028, 1)
+sprite_frames = SubResource("SpriteFrames_6768c")
+animation = &"new_animation"
+frame_progress = 0.39569128
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
