@@ -1,15 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd7eu3ve5ldp7"]
+[gd_scene load_steps=9 format=3 uid="uid://cd7eu3ve5ldp7"]
+
+[ext_resource type="Script" uid="uid://ciuw76kfvsinj" path="res://Personajes/chamán.gd" id="1_18isq"]
+[ext_resource type="Texture2D" uid="uid://dxq4flcb137gc" path="res://Personajes/Chaman.png" id="1_f2s6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m824f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f2s6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f2s6j"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2s6j"]
+size = Vector2(20, 49)
+
+[sub_resource type="Animation" id="Animation_f2s6j"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chamán:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.31),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.4305115e-06, -1.4305115e-06), Vector2(-1.4305115e-06, -0.5000023)]
+}
+
+[sub_resource type="Animation" id="Animation_18isq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chamán:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1.4305115e-06, -1.4305115e-06)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18isq"]
+_data = {
+&"RESET": SubResource("Animation_18isq"),
+&"idle": SubResource("Animation_f2s6j")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18isq"]
+size = Vector2(20, 52)
 
 [node name="Chamán" type="CharacterBody2D"]
+script = ExtResource("1_18isq")
 
 [node name="Chamán" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+position = Vector2(-1.4305115e-06, -1.4305115e-06)
+scale = Vector2(0.74999994, 0.76562494)
 sprite_frames = SubResource("SpriteFrames_m824f")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_f2s6j")
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_f2s6j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_18isq")
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+scale = Vector2(0.375, 0.6875)
+polygon = PackedVector2Array(-8, -48, 0, -48, 0, -64, -8, -64)
+
+[node name="HitboxNPC" type="Area2D" parent="."]
+collision_layer = 2048
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxNPC"]
+shape = SubResource("RectangleShape2D_18isq")
+
+[connection signal="area_entered" from="HitboxNPC" to="." method="_on_hitbox_npc_area_entered"]
+[connection signal="area_exited" from="HitboxNPC" to="." method="_on_hitbox_npc_area_exited"]

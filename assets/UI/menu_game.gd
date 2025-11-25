@@ -6,7 +6,7 @@ class_name Menu
 
 
 func _on_jugar_pressed() -> void:
-	get_tree().change_scene_to_packed(load(Globales.GAME))
+	get_tree().change_scene_to_packed(load(Globales.PANTALLA_CARGA))
 
 func _on_opciones_pressed() -> void:
 	get_tree().change_scene_to_packed(load(Globales.OPTIONS))

@@ -1,4 +1,6 @@
 extends Area2D
+
+
 @onready var anim: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 

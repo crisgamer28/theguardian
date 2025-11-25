@@ -33,13 +33,13 @@ var furia_duracion = 1.0
 @export var efecto_rojo : ShaderMaterial 
 @onready var timer: Timer = $Timer
 var furia_adquirida = false
+var defensa_adquirida = false
 
 signal personaje_murio
 signal vidas_cambiadas
 
-
-var gravedad = 0.05
 var inmune : bool = false
+var gravedad = 0.05
 var velocidad_aumentada = 200
 #func _input(event: InputEvent) -> void:
 	#if Input.is_action_pressed("pause"):
@@ -71,6 +71,10 @@ func _physics_process(delta: float) -> void:
 
 func entrar_furia():
 	furia_adquirida = true
+#
+func entrar_defensa():
+	defensa_adquirida = true
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("fury") and furia_adquirida:
@@ -121,6 +125,8 @@ func _on_attack_body_entered(body: Node2D) -> void:
 		else:
 			daño_player = 1
 			print(daño_player)
+	if body is SkeletonDark:
+		body.tomar_daño(daño_player)
 
 
 ## Setter de las vidas
@@ -135,4 +141,4 @@ func al_cambiar_vidas(vida_nueva: int):
 
 func _on_escudo_body_entered(body: Node2D) -> void:
 		if body is Enemy:
-			print("bloqueado")
+			pass

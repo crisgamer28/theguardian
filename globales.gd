@@ -12,6 +12,7 @@ const GAME = "uid://b1vi0w77pfodo"
 const MENU_GAME = "uid://dcn1mwxx7g0po"
 const OPTIONS = "uid://dcuf3t1o82k15"
 
+const PANTALLA_CARGA = ("uid://cw0a7c4di4kbt")
 
 # Niveles
 const NIVEL_1 = preload("uid://ceapxigsjwfqo")

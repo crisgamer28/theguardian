@@ -7,7 +7,7 @@ func on_enter():
 	player.play_anim("idle player")
 
 func player_process():
-	if Input.is_action_just_pressed("defense"):
+	if Input.is_action_just_pressed("defense") and player.defensa_adquirida:
 		state_manager.change_state("defensa")
 	if Input.is_action_just_pressed("ataque"):
 		state_manager.change_state("attack")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=63 format=3 uid="uid://deh0j64u0nkgg"]
+[gd_scene load_steps=62 format=3 uid="uid://deh0j64u0nkgg"]
 
 [ext_resource type="Script" uid="uid://c240rg0775qrf" path="res://Enemigos/SkeletonDark/enemy_3.gd" id="1_k1fo6"]
 [ext_resource type="Texture2D" uid="uid://bgiefeo70lmef" path="res://Enemigos/SkeletonDark/Skeleton enemy.png" id="2_frkvb"]
 [ext_resource type="Script" uid="uid://0g4g6u7oo8ra" path="res://Enemigos/SkeletonDark/control_states.gd" id="3_62l47"]
 [ext_resource type="Script" uid="uid://dogj8k8p33uv6" path="res://Enemigos/SkeletonDark/hitbox_attack.gd" id="3_fikpj"]
-[ext_resource type="Script" uid="uid://demkkty6378rd" path="res://Enemigos/SkeletonDark/sensor.gd" id="3_l6oht"]
 [ext_resource type="Script" uid="uid://c1oljfpyakegl" path="res://Enemigos/SkeletonDark/idle.gd" id="4_lg5x4"]
 [ext_resource type="Script" uid="uid://dixivoqtdq451" path="res://Enemigos/SkeletonDark/atacar.gd" id="7_fikpj"]
 [ext_resource type="Script" uid="uid://lyv8rhpmac0m" path="res://Enemigos/SkeletonDark/hurt.gd" id="8_bnhwq"]
@@ -360,7 +359,7 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suo7m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suo7m"]
-radius = 40.792156
+radius = 69.00725
 
 [sub_resource type="Animation" id="Animation_62l47"]
 length = 0.001
@@ -399,6 +398,8 @@ _data = {
 }
 
 [node name="Enemy3" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_k1fo6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -441,7 +442,8 @@ shape = SubResource("RectangleShape2D_suo7m")
 
 [node name="Sensor" type="Area2D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("3_l6oht")
+collision_layer = 256
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
 shape = SubResource("CircleShape2D_suo7m")
@@ -479,3 +481,5 @@ state_name = "dead"
 
 [connection signal="body_entered" from="HitboxAttack" to="HitboxAttack" method="_on_body_entered"]
 [connection signal="body_exited" from="HitboxAttack" to="HitboxAttack" method="_on_body_exited"]
+[connection signal="body_entered" from="Sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="body_exited" from="Sensor" to="." method="_on_sensor_body_exited"]

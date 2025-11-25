@@ -1,10 +1,12 @@
 extends StatePlayer
 
 func on_enter():
+	player.defensa_adquirida = true
 	player.play_anim("defense player")
 	%Escudo.monitoring = true
 	player.inmune = true
 	print("entrando en defensa")
+	
 func on_exit():
 	%Escudo.monitoring = false
 	player.inmune = false

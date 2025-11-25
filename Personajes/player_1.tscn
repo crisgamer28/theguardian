@@ -310,9 +310,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_soi14"]
-radius = 7.0
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nilus"]
+size = Vector2(8, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aatkl"]
 size = Vector2(30, 20)
@@ -394,8 +393,8 @@ collision_layer = 2
 collision_mask = 1029
 floor_constant_speed = true
 floor_block_on_wall = false
-floor_max_angle = 1.701696
-floor_snap_length = 17.4
+floor_max_angle = 0.9424778
+floor_snap_length = 10.2
 script = ExtResource("1_tmdyv")
 estadisticas = SubResource("Resource_n1dgj")
 efecto_rojo = ExtResource("11_nilus")
@@ -444,11 +443,11 @@ animation = &"idle player"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-shape = SubResource("CapsuleShape2D_soi14")
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_nilus")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_c4k0l")]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.325, 1.325)
 
 [node name="Attack" type="Area2D" parent="."]
 position = Vector2(24, 10)

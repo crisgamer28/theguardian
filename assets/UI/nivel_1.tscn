@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbh7lstx2d7gn"]
+
+[ext_resource type="Script" uid="uid://d0fblqewvasq4" path="res://assets/UI/nivel_1.gd" id="1_4vbe3"]
+[ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="1_qmw0g"]
+
+[node name="NIVEL1" type="CanvasLayer"]
+script = ExtResource("1_4vbe3")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.1882353)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "NIVEL 1"
+label_settings = ExtResource("1_qmw0g")

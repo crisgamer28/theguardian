@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://cfr5pjdhla0cn"]
+
+[ext_resource type="Texture2D" uid="uid://bpxxu3qofuxc8" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/green/loops/burning_loop_1.png" id="1_ch38r"]
+[ext_resource type="Script" uid="uid://cyhyave1p4cfq" path="res://Obstaculos, Objetos/coleccionables/habilidades/item_curación.gd" id="1_l08yk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch38r"]
+size = Vector2(16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l08yk"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xte2x"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njhjf"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbl3o"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddxmr"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxpef"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h077u"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3jxa"]
+atlas = ExtResource("1_ch38r")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bju3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l08yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xte2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njhjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbl3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddxmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxpef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h077u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3jxa")
+}],
+"loop": true,
+"name": &"curar",
+"speed": 5.0
+}]
+
+[node name="ItemFuria" type="Area2D"]
+collision_layer = 1024
+collision_mask = 2
+script = ExtResource("1_l08yk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_ch38r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bju3u")
+animation = &"curar"
+frame_progress = 0.08871854
