@@ -46,9 +46,9 @@ func patrulla():
 	if rightray.is_colliding():
 		direction = -1
 	if not floordetection.is_colliding():
-		direction *= -1
+		direction = -1
 	if not floordetection.is_colliding():
-		direction *= 1
+		direction = 1
 
 
 func tomar_daño(amount : int):

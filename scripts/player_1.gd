@@ -32,8 +32,8 @@ var furia : bool = false
 var furia_duracion = 1.0
 @export var efecto_rojo : ShaderMaterial 
 @onready var timer: Timer = $Timer
-var furia_adquirida = false
-var defensa_adquirida = false
+@export var furia_adquirida = false
+@export var defensa_adquirida = false
 
 signal personaje_murio
 signal vidas_cambiadas
