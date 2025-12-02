@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bm56dmn5gdbop"]
+[gd_scene load_steps=14 format=3 uid="uid://bm56dmn5gdbop"]
 
 [ext_resource type="Script" uid="uid://bbxt85qmvxgxd" path="res://Obstaculos, Objetos/coleccionables/habilidades/item_defensa.gd" id="1_vxuys"]
 [ext_resource type="Texture2D" uid="uid://sxwa8jnf473q" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/white/loops/burning_loop_1.png" id="2_vxuys"]
+[ext_resource type="PackedScene" uid="uid://dota3oa21wneh" path="res://assets/UI/mensaje_habilidad.tscn" id="3_1krbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7r1e"]
-radius = 18.027756
+radius = 10.440307
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1krbp"]
 atlas = ExtResource("2_vxuys")
@@ -76,12 +77,14 @@ collision_mask = 2
 script = ExtResource("1_vxuys")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_c7r1e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6768c")
 animation = &"habilidad_defensa"
 frame_progress = 0.5459928
+
+[node name="MensajeHabilidad" parent="." instance=ExtResource("3_1krbp")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

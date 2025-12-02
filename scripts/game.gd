@@ -3,7 +3,7 @@ extends Node2D
 #https://nastanliev.itch.io/goblins
 
 @onready var player_1: Player1 = %Player1
-@onready var game_over_menu: GameOverPanel = %GameOverMenu
+@export var game_over_menu: GameOverPanel
 @onready var gema: Area2D = $Gema
 
 
