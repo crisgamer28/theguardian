@@ -4,7 +4,7 @@
 [ext_resource type="LabelSettings" uid="uid://c8put63hvxy62" path="res://resources/labelsettingsmenu.tres" id="2_si4r2"]
 
 [sub_resource type="Animation" id="Animation_kyoaj"]
-length = 0.001
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,7 +96,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 4.122000000000001
+wait_time = 3.0
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

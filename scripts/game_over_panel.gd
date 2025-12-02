@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var reintentar: Button = $Control/VBoxContainer/Reintentar
 
 func _on_reintentar_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 
 func _on_volver_al_menú_pressed() -> void:

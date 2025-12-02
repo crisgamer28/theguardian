@@ -3,8 +3,8 @@ extends Node2D
 #https://nastanliev.itch.io/goblins
 
 @onready var player_1: Player1 = %Player1
-@export var game_over_menu: GameOverPanel
-@onready var gema: Area2D = $Gema
+@onready var game_over_menu: GameOverPanel = %GameOverMenu
+
 
 
 #hola
@@ -12,7 +12,6 @@ func _ready() -> void:
 	game_over_menu.reintentar.pressed.connect(reiniciar_nivel)
 	player_1.personaje_murio.connect(game_over_menu.show)
 	get_tree().paused = false
-	
 func reiniciar_nivel():
 	get_tree().reload_current_scene()
 
