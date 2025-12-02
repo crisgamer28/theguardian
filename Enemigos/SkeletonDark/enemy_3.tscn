@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://deh0j64u0nkgg"]
+[gd_scene load_steps=63 format=3 uid="uid://deh0j64u0nkgg"]
 
 [ext_resource type="Script" uid="uid://c240rg0775qrf" path="res://Enemigos/SkeletonDark/enemy_3.gd" id="1_k1fo6"]
 [ext_resource type="Texture2D" uid="uid://bgiefeo70lmef" path="res://Enemigos/SkeletonDark/Skeleton enemy.png" id="2_frkvb"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dixivoqtdq451" path="res://Enemigos/SkeletonDark/atacar.gd" id="7_fikpj"]
 [ext_resource type="Script" uid="uid://lyv8rhpmac0m" path="res://Enemigos/SkeletonDark/hurt.gd" id="8_bnhwq"]
 [ext_resource type="Script" uid="uid://demxjct2t1lqi" path="res://Enemigos/SkeletonDark/dead.gd" id="9_ucrfc"]
+[ext_resource type="Script" uid="uid://bhvworxpitcg3" path="res://Enemigos/SkeletonDark/node.gd" id="10_fikpj"]
 [ext_resource type="Script" uid="uid://dvbg3at1ktnld" path="res://Enemigos/SkeletonDark/patrulla.gd" id="10_l6oht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frkvb"]
@@ -232,7 +233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4hlpq")
 }],
-"loop": false,
+"loop": true,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -356,7 +357,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6oht"]
 size = Vector2(16, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_suo7m"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_l6oht"]
+radius = 20.024984
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suo7m"]
 radius = 69.00725
@@ -412,22 +414,22 @@ position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_l6oht")
 
 [node name="Leftray" type="RayCast2D" parent="."]
-position = Vector2(-9, 14)
-target_position = Vector2(-18, 0)
+position = Vector2(-9, 9)
+target_position = Vector2(-12, 0)
 collide_with_areas = true
 
 [node name="Rightray" type="RayCast2D" parent="."]
-position = Vector2(1, 14)
-target_position = Vector2(20, 0)
+position = Vector2(1, 9)
+target_position = Vector2(13, 0)
 collide_with_areas = true
 
 [node name="floordetection" type="RayCast2D" parent="."]
-position = Vector2(9, -16)
-target_position = Vector2(0, 35)
+position = Vector2(5, -15)
+target_position = Vector2(0, 32)
 
 [node name="floordetection2" type="RayCast2D" parent="."]
-position = Vector2(-11, -16)
-target_position = Vector2(0, 35)
+position = Vector2(-9, -15)
+target_position = Vector2(0, 32)
 
 [node name="HitboxAttack" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -438,7 +440,8 @@ script = ExtResource("3_fikpj")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAttack"]
-shape = SubResource("RectangleShape2D_suo7m")
+position = Vector2(-19, 0)
+shape = SubResource("CircleShape2D_l6oht")
 
 [node name="Sensor" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -456,8 +459,8 @@ libraries = {
 [node name="ControlStates" type="Node" parent="." node_paths=PackedStringArray("enemigo", "states", "current_state")]
 script = ExtResource("3_62l47")
 enemigo = NodePath("..")
-states = [NodePath("Idle"), NodePath("Atacar"), NodePath("Hurt"), NodePath("Dead"), NodePath("Patrulla")]
-current_state = NodePath("Idle")
+states = [NodePath("Perseguir"), NodePath("Atacar"), NodePath("Hurt"), NodePath("Dead"), NodePath("Patrulla")]
+current_state = NodePath("Perseguir")
 
 [node name="Patrulla" type="Node" parent="ControlStates"]
 script = ExtResource("10_l6oht")
@@ -467,9 +470,9 @@ state_name = "patrulla"
 script = ExtResource("7_fikpj")
 state_name = "atacar"
 
-[node name="Idle" type="Node" parent="ControlStates"]
+[node name="Perseguir" type="Node" parent="ControlStates"]
 script = ExtResource("4_lg5x4")
-state_name = "idle"
+state_name = "perseguir"
 
 [node name="Hurt" type="Node" parent="ControlStates"]
 script = ExtResource("8_bnhwq")
@@ -478,6 +481,9 @@ state_name = "hurt"
 [node name="Dead" type="Node" parent="ControlStates"]
 script = ExtResource("9_ucrfc")
 state_name = "dead"
+
+[node name="Node" type="Node" parent="ControlStates"]
+script = ExtResource("10_fikpj")
 
 [connection signal="body_entered" from="HitboxAttack" to="HitboxAttack" method="_on_body_entered"]
 [connection signal="body_exited" from="HitboxAttack" to="HitboxAttack" method="_on_body_exited"]

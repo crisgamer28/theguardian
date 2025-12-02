@@ -19,7 +19,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 637.0
 offset_bottom = 360.0
-color = Color(0, 0, 0, 1)
+color = Color(0.4432919, 0.22589117, 0.07432551, 1)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
@@ -34,7 +34,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "NIVEL 2"
+text = "NIVEL 1"
 label_settings = ExtResource("1_jv4g2")
 vertical_alignment = 1
 
@@ -53,6 +53,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_p767g")
 theme_override_font_sizes/font_size = 12
-text = "Submundo"
+text = "Valle"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

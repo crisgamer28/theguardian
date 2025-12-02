@@ -1,7 +1,8 @@
 extends Node
 
 
-var jugador: Player1
+var jugador_stats : EntityStats = EntityStats.new()
+
 
 var ultimo_checkpoint: Checkpoint
 signal actualizar_mision(objetivo)
@@ -13,8 +14,6 @@ const MENU_GAME = "uid://dcn1mwxx7g0po"
 const OPTIONS = "uid://dcuf3t1o82k15"
 
 const PANTALLA_CARGA = ("uid://cw0a7c4di4kbt")
-
-# Niveles
-const NIVEL_1 = preload("uid://ceapxigsjwfqo")
+const CINEMÁTICA = preload("uid://ehfskq01jd8l")
 const NIVEL_2 = preload("uid://dp32bdanmb7ks")
 const NIVEL_3 = preload("uid://bef77pt26v5b7")

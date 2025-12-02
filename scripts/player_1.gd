@@ -18,6 +18,7 @@ var direccion : Vector2 = Vector2.ZERO
 @onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 var daño_player := 1
 var delay_die : float = 0.3
 
