@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cd7eu3ve5ldp7"]
+[gd_scene load_steps=10 format=3 uid="uid://cd7eu3ve5ldp7"]
 
 [ext_resource type="Script" uid="uid://ciuw76kfvsinj" path="res://Personajes/chamán.gd" id="1_18isq"]
 [ext_resource type="Texture2D" uid="uid://dxq4flcb137gc" path="res://Personajes/Chaman.png" id="1_f2s6j"]
+[ext_resource type="Texture2D" uid="uid://bvanabhk75usu" path="res://Obstaculos, Objetos/coleccionables/exclamación.png" id="3_sqaio"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m824f"]
 animations = [{
@@ -14,8 +15,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2s6j"]
-size = Vector2(20, 49)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sqaio"]
+radius = 7.0
+height = 49.0
 
 [sub_resource type="Animation" id="Animation_18isq"]
 length = 0.001
@@ -54,10 +56,11 @@ _data = {
 &"idle": SubResource("Animation_f2s6j")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_18isq"]
-size = Vector2(20, 52)
+[sub_resource type="CircleShape2D" id="CircleShape2D_18isq"]
+radius = 27.313
 
 [node name="Chamán" type="CharacterBody2D"]
+collision_mask = 0
 script = ExtResource("1_18isq")
 
 [node name="Chamán" type="AnimatedSprite2D" parent="."]
@@ -67,8 +70,8 @@ sprite_frames = SubResource("SpriteFrames_m824f")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
-shape = SubResource("RectangleShape2D_f2s6j")
+shape = SubResource("CapsuleShape2D_sqaio")
+one_way_collision = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -80,8 +83,14 @@ collision_layer = 2048
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxNPC"]
-shape = SubResource("RectangleShape2D_18isq")
-one_way_collision = true
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_18isq")
+
+[node name="Exclamación" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_sqaio")
 
 [connection signal="area_entered" from="HitboxNPC" to="." method="_on_hitbox_npc_area_entered"]
 [connection signal="area_exited" from="HitboxNPC" to="." method="_on_hitbox_npc_area_exited"]
