@@ -357,11 +357,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6oht"]
 size = Vector2(16, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l6oht"]
-radius = 20.024984
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fikpj"]
+size = Vector2(32, 30)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suo7m"]
-radius = 69.00725
+radius = 57.035076
 
 [sub_resource type="Animation" id="Animation_62l47"]
 length = 0.001
@@ -407,6 +407,8 @@ script = ExtResource("1_k1fo6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nfxc2")
 animation = &"attack"
+frame = 12
+frame_progress = 1.0
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -434,14 +436,14 @@ target_position = Vector2(0, 32)
 [node name="HitboxAttack" type="Area2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(19, 0)
-collision_layer = 4
+collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_fikpj")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAttack"]
-position = Vector2(-19, 0)
-shape = SubResource("CircleShape2D_l6oht")
+position = Vector2(4, -4)
+shape = SubResource("RectangleShape2D_fikpj")
 
 [node name="Sensor" type="Area2D" parent="."]
 unique_name_in_owner = true

@@ -14,12 +14,16 @@ func enemy_process():
 	#deteccion suelo
 	if enemigo.leftray.is_colliding():
 		direction = 1
+
+
 	if enemigo.rightray.is_colliding():
 		direction = -1
+
+
 	if not enemigo.floordetection.is_colliding():
 		direction = -1
 
-		
+
 	if direction == 1:
 		enemigo.animated_sprite_2d.flip_h = false
 		enemigo.flip()

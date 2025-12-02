@@ -2,7 +2,7 @@ extends DarkState
 
 
 var direction = 1
-var speed = 76
+var speed = 70
 
 func on_enter():
 	enemigo.play_animation("walk")

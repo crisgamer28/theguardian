@@ -45,17 +45,20 @@ func patrulla():
 
 
 func tomar_daño(amount : int):
-	health -= amount
 	animated_sprite_2d.play("hurt")
+	await get_tree().create_timer(0.7).timeout
+	health -= amount
 	if health <= 0:
 		morir()
-		
+	else:
+		control_states.change_state("perseguir")
+
+
 func morir():
 	animated_sprite_2d.play("die")
 	await get_tree().create_timer(1.0).timeout
 	hitbox_attack.monitoring = false
 	sensor.monitoring = false
-
 	queue_free()
 
 
@@ -73,8 +76,8 @@ func _on_sensor_body_entered(body: Node2D) -> void:
 		player_in_range = true
 		player = body
 		control_states.change_state("perseguir")
-		await get_tree().create_timer(1.0).timeout
-		animated_sprite_2d.play("idle")
+		#await get_tree().create_timer(0.5).timeout
+		#animated_sprite_2d.play("idle")
 
 
 func _on_sensor_body_exited(body: Node2D) -> void:

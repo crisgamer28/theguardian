@@ -1,5 +1,8 @@
 extends Node
 
+@onready var player_1: Player1 = %Player1
+@onready var game_over_menu: GameOverPanel = %GameOverMenu
+
 
 var jugador_stats : EntityStats = EntityStats.new()
 
