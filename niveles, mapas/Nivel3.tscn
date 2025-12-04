@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bef77pt26v5b7"]
+[gd_scene load_steps=10 format=4 uid="uid://bef77pt26v5b7"]
 
 [ext_resource type="Texture2D" uid="uid://bfujdc4i3rpi8" path="res://assets/Otros Tilemaps/Tiles/Assets/Background_2.png" id="1_4x0bg"]
 [ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="2_3bmmt"]
 [ext_resource type="TileSet" uid="uid://bhbpr2gdkgs2h" path="res://niveles, mapas/tileset_nivel_3.tres" id="3_3bmmt"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Personajes/player_1.tscn" id="3_oantr"]
+[ext_resource type="PackedScene" uid="uid://djobjioj6u774" path="res://Enemigos/AshcurseGoblin/ash_curse_globin.tscn" id="5_oantr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1tle"]
 texture = ExtResource("1_4x0bg")
@@ -909,4 +910,9 @@ tile_map_data = PackedByteArray("AAADAAMAAQALAAoAAAAAAAQAAQALAAoAAAABAAMAAQALAAo
 tile_set = ExtResource("3_3bmmt")
 
 [node name="Player1" parent="." instance=ExtResource("3_oantr")]
-position = Vector2(121, -21)
+position = Vector2(456, 30)
+
+[node name="AshCurseGlobin" parent="." instance=ExtResource("5_oantr")]
+position = Vector2(397, 27)
+collision_layer = 0
+collision_mask = 1

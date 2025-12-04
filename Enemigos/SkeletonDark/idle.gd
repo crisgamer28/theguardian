@@ -2,10 +2,11 @@ extends DarkState
 
 
 var direction = 1
-var speed = 70
+var speed = 60
 
 func on_enter():
 	enemigo.play_animation("walk")
+	#enemigo.velocity = Vector2.ZERO
 func enemy_process():
 	var player_position = enemigo.player.global_position
 	var enemigo_position = enemigo.global_position

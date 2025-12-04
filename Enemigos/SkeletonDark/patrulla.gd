@@ -31,4 +31,7 @@ func enemy_process():
 		enemigo.animated_sprite_2d.flip_h = true
 		enemigo.flip()
 	
+	if enemigo.health == 0:
+		enemigo.velocity = Vector2.ZERO
+	
 	enemigo.move_and_slide()

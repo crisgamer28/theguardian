@@ -355,13 +355,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6oht"]
-size = Vector2(16, 32)
+size = Vector2(15, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fikpj"]
-size = Vector2(32, 30)
+size = Vector2(38, 36)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suo7m"]
-radius = 57.035076
+radius = 54.037025
 
 [sub_resource type="Animation" id="Animation_62l47"]
 length = 0.001
@@ -380,6 +380,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_suo7m"]
 resource_name = "ataque dark"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -387,7 +388,7 @@ tracks/0/path = NodePath("HitboxAttack:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.92),
+"times": PackedFloat32Array(0.1, 0.5, 0.93333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -403,16 +404,16 @@ _data = {
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_k1fo6")
+health = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nfxc2")
 animation = &"attack"
-frame = 12
-frame_progress = 1.0
+frame_progress = 0.7223671
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_l6oht")
 
 [node name="Leftray" type="RayCast2D" parent="."]
@@ -435,14 +436,13 @@ target_position = Vector2(0, 32)
 
 [node name="HitboxAttack" type="Area2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(19, 0)
+position = Vector2(21, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_fikpj")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxAttack"]
-position = Vector2(4, -4)
 shape = SubResource("RectangleShape2D_fikpj")
 
 [node name="Sensor" type="Area2D" parent="."]
@@ -454,6 +454,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_suo7m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_lg5x4")
 }
@@ -469,6 +470,7 @@ script = ExtResource("10_l6oht")
 state_name = "patrulla"
 
 [node name="Atacar" type="Node" parent="ControlStates"]
+unique_name_in_owner = true
 script = ExtResource("7_fikpj")
 state_name = "atacar"
 
@@ -487,7 +489,8 @@ state_name = "dead"
 [node name="Node" type="Node" parent="ControlStates"]
 script = ExtResource("10_fikpj")
 
-[connection signal="body_entered" from="HitboxAttack" to="HitboxAttack" method="_on_body_entered"]
-[connection signal="body_exited" from="HitboxAttack" to="HitboxAttack" method="_on_body_exited"]
+[connection signal="body_entered" from="HitboxAttack" to="." method="_on_hitbox_attack_body_entered"]
+[connection signal="body_exited" from="HitboxAttack" to="." method="_on_hitbox_attack_body_exited"]
 [connection signal="body_entered" from="Sensor" to="." method="_on_sensor_body_entered"]
 [connection signal="body_exited" from="Sensor" to="." method="_on_sensor_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

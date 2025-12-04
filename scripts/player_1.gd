@@ -36,6 +36,9 @@ var furia_duracion = 1.0
 @export var furia_adquirida = false
 @export var defensa_adquirida = false
 
+
+var curación = false
+
 signal personaje_murio
 signal vidas_cambiadas
 
