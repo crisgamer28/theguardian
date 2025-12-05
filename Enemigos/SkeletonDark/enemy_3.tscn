@@ -404,7 +404,6 @@ _data = {
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_k1fo6")
-health = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nfxc2")
@@ -415,6 +414,7 @@ speed_scale = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_l6oht")
+one_way_collision = true
 
 [node name="Leftray" type="RayCast2D" parent="."]
 position = Vector2(-9, 9)
@@ -428,11 +428,11 @@ collide_with_areas = true
 
 [node name="floordetection" type="RayCast2D" parent="."]
 position = Vector2(5, -15)
-target_position = Vector2(0, 32)
+target_position = Vector2(0, 34)
 
 [node name="floordetection2" type="RayCast2D" parent="."]
 position = Vector2(-9, -15)
-target_position = Vector2(0, 32)
+target_position = Vector2(0, 34)
 
 [node name="HitboxAttack" type="Area2D" parent="."]
 unique_name_in_owner = true

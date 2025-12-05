@@ -73,6 +73,9 @@ func _physics_process(delta: float) -> void:
 	velocity.y = direccion.y * JUMP_VELOCITY
 	move_and_slide()
 
+func curarse():
+	curación = true
+
 func entrar_furia():
 	furia_adquirida = true
 #
@@ -86,6 +89,8 @@ func _input(event: InputEvent) -> void:
 		furia = true
 		#print("algo se presionó")
 		sprite.material = efecto_rojo
+	if Input.is_action_just_pressed("curarse"):
+		recuperar_vida()
 		#
 func _on_timeout():
 	furia = false
@@ -109,6 +114,10 @@ func morir():
 	sprite.play("die player")
 	await sprite.animation_finished
 	personaje_murio.emit()
+	
+func recuperar_vida():
+	if curación == true:
+		vidas += 1
 
 func curar():
 	vidas = VIDA_MAXIMA

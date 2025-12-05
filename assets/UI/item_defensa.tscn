@@ -1,41 +1,41 @@
 [gd_scene load_steps=14 format=3 uid="uid://bm56dmn5gdbop"]
 
 [ext_resource type="Script" uid="uid://bbxt85qmvxgxd" path="res://Obstaculos, Objetos/coleccionables/habilidades/item_defensa.gd" id="1_vxuys"]
-[ext_resource type="Texture2D" uid="uid://bpxxu3qofuxc8" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/green/loops/burning_loop_1.png" id="2_1krbp"]
+[ext_resource type="Texture2D" uid="uid://sxwa8jnf473q" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/white/loops/burning_loop_1.png" id="2_1krbp"]
 [ext_resource type="PackedScene" uid="uid://dota3oa21wneh" path="res://assets/UI/mensaje_habilidad.tscn" id="3_1krbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7r1e"]
 radius = 10.440307
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cniqr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_24pai"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(0, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2dnti"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwfe6"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(24, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3gbid"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwrpd"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(48, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gj3f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlpex"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(72, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_euheq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp7sc"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(96, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8ir3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_my75i"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(120, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_36cv2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k7us"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(144, 0, 24, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0ypl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfptc"]
 atlas = ExtResource("2_1krbp")
 region = Rect2(168, 0, 24, 32)
 
@@ -43,31 +43,31 @@ region = Rect2(168, 0, 24, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cniqr")
+"texture": SubResource("AtlasTexture_24pai")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2dnti")
+"texture": SubResource("AtlasTexture_pwfe6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3gbid")
+"texture": SubResource("AtlasTexture_rwrpd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6gj3f")
+"texture": SubResource("AtlasTexture_wlpex")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_euheq")
+"texture": SubResource("AtlasTexture_dp7sc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u8ir3")
+"texture": SubResource("AtlasTexture_my75i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_36cv2")
+"texture": SubResource("AtlasTexture_0k7us")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s0ypl")
+"texture": SubResource("AtlasTexture_tfptc")
 }],
 "loop": true,
-"name": &"item_curar",
+"name": &"habilidad_defensa",
 "speed": 5.0
 }]
 
@@ -82,7 +82,8 @@ shape = SubResource("CircleShape2D_c7r1e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6768c")
-animation = &"item_curar"
+animation = &"habilidad_defensa"
+frame_progress = 0.6529037
 
 [node name="MensajeHabilidad" parent="." instance=ExtResource("3_1krbp")]
 

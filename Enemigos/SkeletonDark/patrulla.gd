@@ -22,6 +22,9 @@ func enemy_process():
 
 	if not enemigo.floordetection.is_colliding():
 		direction = -1
+		
+	if not enemigo.floordetection_2.is_colliding():
+		direction = 1
 
 
 	if direction == 1:

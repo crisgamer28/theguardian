@@ -84,7 +84,7 @@ shape = SubResource("CircleShape2D_c7r1e")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_6768c")
 animation = &"item_curar"
-frame_progress = 0.060010523
+frame_progress = 0.46922794
 
 [node name="MensajeHabilidad" parent="." instance=ExtResource("2_cniqr")]
 

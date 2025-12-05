@@ -11,13 +11,13 @@ class_name SkeletonDark
 @onready var floordetection_2: RayCast2D = $floordetection2
 
 #@export var patrulla : bool = false
-@export var health : int = 10
+@export var health : int = 5
 @export var daño : int = 1
 var daño_aplicado = false
 
 
 var speed = 50
-var gravity = 200
+var gravity = 100
 var direction = 1
 var player : Player1 = null
 var player1 : Player
@@ -31,7 +31,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	control_states.current_state.enemy_process()
 	if not is_on_floor():
-		velocity = get_gravity() * delta
+		velocity = get_gravity() * delta * 30
 	patrulla()
 	flip()
 
