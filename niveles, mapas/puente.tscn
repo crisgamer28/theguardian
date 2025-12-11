@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://6yuus08bjf53"]
+[gd_scene load_steps=8 format=4 uid="uid://6yuus08bjf53"]
 
 [ext_resource type="Texture2D" uid="uid://dox22prljls6n" path="res://assets/Otros Tilemaps/Tiles/Assets/Assets.png" id="1_bajsm"]
 [ext_resource type="TileSet" uid="uid://bg3lihv30ckcd" path="res://niveles, mapas/backgrounds.tres" id="1_ph2ao"]
 [ext_resource type="TileSet" uid="uid://mc068wx18xs0" path="res://niveles, mapas/backgrounds2.tres" id="2_oyhuu"]
 [ext_resource type="PackedScene" uid="uid://txcplk4msayd" path="res://Personajes/player_1.tscn" id="4_veddx"]
+[ext_resource type="PackedScene" uid="uid://8v5udfb1ni62" path="res://niveles, mapas/muro.tscn" id="5_ph2ao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6e20t"]
 texture = ExtResource("1_bajsm")
@@ -395,3 +396,6 @@ tile_set = SubResource("TileSet_00fvj")
 
 [node name="Player1" parent="." instance=ExtResource("4_veddx")]
 position = Vector2(-19, 188)
+
+[node name="Muro" parent="." instance=ExtResource("5_ph2ao")]
+position = Vector2(-72, 216)

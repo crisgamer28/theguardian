@@ -1,7 +1,7 @@
 extends Node
 
-@onready var player_1: Player1 = %Player1
-@onready var game_over_menu: GameOverPanel = %GameOverMenu
+#@onready var player_1: Player1 = %Player1
+#@onready var game_over_menu: GameOverPanel = %GameOverMenu
 
 
 var jugador_stats : EntityStats = EntityStats.new()
@@ -19,4 +19,6 @@ const OPTIONS = "uid://dcuf3t1o82k15"
 const PANTALLA_CARGA = ("uid://cw0a7c4di4kbt")
 const CINEMÁTICA = preload("uid://ehfskq01jd8l")
 const NIVEL_2 = preload("uid://dp32bdanmb7ks")
+const TRANSICIÓN_NIVEL_2 = preload("uid://d1lh51uq20vvk")
+const PUENTE = preload("uid://6yuus08bjf53")
 const NIVEL_3 = preload("uid://bef77pt26v5b7")

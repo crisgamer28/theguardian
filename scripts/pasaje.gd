@@ -7,4 +7,4 @@ func _on_body_entered(body: Node2D) -> void:
 		change_scene()
 
 func change_scene():
-	get_tree().change_scene_to_packed(Globales.NIVEL_2)
+	get_tree().change_scene_to_packed(Globales.TRANSICIÓN_NIVEL_2)

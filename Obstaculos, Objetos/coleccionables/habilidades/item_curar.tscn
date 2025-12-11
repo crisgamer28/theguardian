@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2a3ip42eq0ob" path="res://Obstaculos, Objetos/coleccionables/habilidades/item_curar.gd" id="1_cniqr"]
 [ext_resource type="Texture2D" uid="uid://bpxxu3qofuxc8" path="res://Obstaculos, Objetos/coleccionables/assets fuego/png/green/loops/burning_loop_1.png" id="1_k0oqm"]
-[ext_resource type="PackedScene" uid="uid://dota3oa21wneh" path="res://assets/UI/mensaje_habilidad.tscn" id="2_cniqr"]
+[ext_resource type="PackedScene" uid="uid://3pc6owb2de7i" path="res://assets/UI/mensaje_habilidad_2.tscn" id="3_cniqr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7r1e"]
 radius = 10.440307
@@ -86,6 +86,6 @@ sprite_frames = SubResource("SpriteFrames_6768c")
 animation = &"item_curar"
 frame_progress = 0.46922794
 
-[node name="MensajeHabilidad" parent="." instance=ExtResource("2_cniqr")]
+[node name="MensajeHabilidad2" parent="." instance=ExtResource("3_cniqr")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

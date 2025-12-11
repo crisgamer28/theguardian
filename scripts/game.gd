@@ -1,4 +1,5 @@
 extends Node2D
+class_name Game
 #https://itch.io/queue/c/3904913/killer-plants?game_id=836667&password=
 #https://nastanliev.itch.io/goblins
 
