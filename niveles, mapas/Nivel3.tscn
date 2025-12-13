@@ -919,10 +919,10 @@ tile_map_data = PackedByteArray("AAADAAMAAQALAAoAAAAAAAQAAQALAAoAAAABAAMAAQALAAo
 tile_set = ExtResource("3_3bmmt")
 
 [node name="Player1" parent="." instance=ExtResource("3_oantr")]
-position = Vector2(456, 30)
+position = Vector2(29, -21)
 
 [node name="AshCurseGlobin" parent="." instance=ExtResource("5_oantr")]
-position = Vector2(397, 27)
+position = Vector2(362, 23)
 collision_layer = 0
 collision_mask = 1
 
