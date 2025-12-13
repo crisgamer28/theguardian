@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://cd7eu3ve5ldp7" path="res://Personajes/chamán.tscn" id="16_24llu"]
 [ext_resource type="PackedScene" uid="uid://bm56dmn5gdbop" path="res://assets/UI/item_defensa.tscn" id="16_rbgej"]
 [ext_resource type="PackedScene" uid="uid://btisafip7axtg" path="res://Obstaculos, Objetos/coleccionables/cofres/chest.tscn" id="17_rbgej"]
-[ext_resource type="PackedScene" uid="uid://8v5udfb1ni62" path="res://niveles, mapas/muro.tscn" id="18_bnj55"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd15t"]
 texture = ExtResource("3_2gjgb")
@@ -4388,6 +4387,9 @@ sources/1 = SubResource("TileSetScenesCollectionSource_ska4m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbgej"]
 size = Vector2(34, 67.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnj55"]
+size = Vector2(20, 390)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_rrgkk")
 metadata/_edit_horizontal_guides_ = [312.0]
@@ -4551,32 +4553,33 @@ position = Vector2(364, 80)
 
 [node name="Límites" type="Node2D" parent="."]
 
-[node name="Muro" parent="Límites" instance=ExtResource("18_bnj55")]
-position = Vector2(-201, -23)
+[node name="StaticBody2D" type="StaticBody2D" parent="Límites"]
+position = Vector2(-200, 7)
+metadata/_edit_group_ = true
 
-[node name="Muro2" parent="Límites" instance=ExtResource("18_bnj55")]
-position = Vector2(1405, -199)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites/StaticBody2D"]
+shape = SubResource("RectangleShape2D_bnj55")
 
 [connection signal="body_entered" from="TileMaps/Foregrounds/Spikes" to="TileMaps/Foregrounds/Spikes" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121761" to="TileMaps/Foregrounds/@Area2D@121761" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121762" to="TileMaps/Foregrounds/@Area2D@121762" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121763" to="TileMaps/Foregrounds/@Area2D@121763" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121764" to="TileMaps/Foregrounds/@Area2D@121764" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121765" to="TileMaps/Foregrounds/@Area2D@121765" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121766" to="TileMaps/Foregrounds/@Area2D@121766" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121767" to="TileMaps/Foregrounds/@Area2D@121767" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121768" to="TileMaps/Foregrounds/@Area2D@121768" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121769" to="TileMaps/Foregrounds/@Area2D@121769" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121770" to="TileMaps/Foregrounds/@Area2D@121770" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121771" to="TileMaps/Foregrounds/@Area2D@121771" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121772" to="TileMaps/Foregrounds/@Area2D@121772" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121773" to="TileMaps/Foregrounds/@Area2D@121773" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121774" to="TileMaps/Foregrounds/@Area2D@121774" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121775" to="TileMaps/Foregrounds/@Area2D@121775" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121776" to="TileMaps/Foregrounds/@Area2D@121776" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121777" to="TileMaps/Foregrounds/@Area2D@121777" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121778" to="TileMaps/Foregrounds/@Area2D@121778" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121779" to="TileMaps/Foregrounds/@Area2D@121779" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121780" to="TileMaps/Foregrounds/@Area2D@121780" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@121781" to="TileMaps/Foregrounds/@Area2D@121781" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96968" to="TileMaps/Foregrounds/@Area2D@96968" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96969" to="TileMaps/Foregrounds/@Area2D@96969" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96970" to="TileMaps/Foregrounds/@Area2D@96970" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96971" to="TileMaps/Foregrounds/@Area2D@96971" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96972" to="TileMaps/Foregrounds/@Area2D@96972" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96973" to="TileMaps/Foregrounds/@Area2D@96973" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96974" to="TileMaps/Foregrounds/@Area2D@96974" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96975" to="TileMaps/Foregrounds/@Area2D@96975" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96976" to="TileMaps/Foregrounds/@Area2D@96976" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96977" to="TileMaps/Foregrounds/@Area2D@96977" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96978" to="TileMaps/Foregrounds/@Area2D@96978" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96979" to="TileMaps/Foregrounds/@Area2D@96979" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96980" to="TileMaps/Foregrounds/@Area2D@96980" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96981" to="TileMaps/Foregrounds/@Area2D@96981" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96982" to="TileMaps/Foregrounds/@Area2D@96982" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96983" to="TileMaps/Foregrounds/@Area2D@96983" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96984" to="TileMaps/Foregrounds/@Area2D@96984" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96985" to="TileMaps/Foregrounds/@Area2D@96985" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96986" to="TileMaps/Foregrounds/@Area2D@96986" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96987" to="TileMaps/Foregrounds/@Area2D@96987" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMaps/Foregrounds/@Area2D@96988" to="TileMaps/Foregrounds/@Area2D@96988" method="_on_body_entered"]
 [connection signal="body_entered" from="ContenedorCheckpoints/Pasaje" to="ContenedorCheckpoints/Pasaje" method="_on_body_entered"]

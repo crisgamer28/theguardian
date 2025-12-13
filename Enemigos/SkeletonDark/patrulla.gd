@@ -2,7 +2,7 @@ extends DarkState
 
 var direction = 1
 var speed = 50
-
+var player : Player1
 
 
 func on_enter():

@@ -358,7 +358,7 @@ animations = [{
 size = Vector2(15, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fikpj"]
-size = Vector2(38, 36)
+size = Vector2(22, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_suo7m"]
 radius = 54.037025
@@ -407,14 +407,13 @@ script = ExtResource("1_k1fo6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nfxc2")
-animation = &"attack"
-frame_progress = 0.7223671
+animation = &"die"
+frame_progress = 0.74890083
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_l6oht")
-one_way_collision = true
 
 [node name="Leftray" type="RayCast2D" parent="."]
 position = Vector2(-9, 9)

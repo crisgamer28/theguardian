@@ -17,7 +17,7 @@ var daño_aplicado = false
 
 
 var speed = 50
-var gravity = 100
+var gravity = 980
 var direction = 1
 var player : Player1 = null
 var player1 : Player
@@ -27,12 +27,10 @@ func play_animation(anim: String):
 	animated_sprite_2d.play(anim)
 func _ready() -> void: 
 	control_states.change_state("patrulla")
-
 func _physics_process(delta: float) -> void:
 	control_states.current_state.enemy_process()
 	if not is_on_floor():
-		velocity = get_gravity() * delta * 30
-	patrulla()
+		velocity.y += gravity * delta * 30
 	flip()
 
 
@@ -49,24 +47,27 @@ func patrulla():
 
 
 func tomar_daño(amount : int):
-	animated_sprite_2d.play("hurt")
-	await get_tree().create_timer(0.7).timeout
+	#animated_sprite_2d.play("hurt")
+	#await get_tree().create_timer(0.7).timeout
 	health -= amount
 	print(health)
 	if health <= 0:
 		morir()
-	else:
-		control_states.change_state("atacar")
+		return
+	control_states.change_state("hurt")
+	#else:
+		#control_states.change_state("atacar")
 
 
 func morir():
-	animated_sprite_2d.play("die")
-	await get_tree().create_timer(1.0).timeout
-	hitbox_attack.monitoring = false
-	sensor.monitoring = false
-	hitbox_attack.hide()
+	control_states.change_state("dead")
+	#animated_sprite_2d.play("die")
+	#await get_tree().create_timer(1.0).timeout
+	#hitbox_attack.monitoring = false
+	#sensor.monitoring = false
+	#hitbox_attack.hide()
 	
-	queue_free()
+	#queue_free()
 
 
 
@@ -84,12 +85,14 @@ func _on_sensor_body_entered(body: Node2D) -> void:
 	if body is Player1:
 		player_in_range = true
 		player = body
-		if player_in_range:
+		if control_states.current_state.state_name != "hurt" and control_states.current_state.state_name != "hurt":
 			control_states.change_state("perseguir")
-		elif player_in_range:
-			control_states.change_state("atacar")
-		else:
-			control_states.change_state("patrulla")
+		#if player_in_range:
+			#control_states.change_state("perseguir")
+		#elif player_in_range:
+			#control_states.change_state("atacar")
+		#else:
+			#control_states.change_state("patrulla")
 			
 		
 		
@@ -103,14 +106,19 @@ func _on_sensor_body_exited(body: Node2D) -> void:
 		player_in_range = false
 		player = null
 		control_states.change_state("patrulla")
-		
+		#if control_states.current_state.state_name == "perseguir":
+			#control_states.change_state("patrulla")
+		#
 
 #
 func _on_hitbox_attack_body_entered(body: Node2D) -> void:
-	velocity = Vector2.ZERO
+	control_states.change_state("atacar")
 	#animated_sprite_2d.play("attack")
-	await get_tree().create_timer(1.0).timeout
+	#await get_tree().create_timer(1.0).timeout
 	if body is Player1:
+	#if body is Player1 and not daño:
+		#if control_states.current_state.state_name == "atacar":
+			#body.restar_vidas(daño)
 		%AnimationPlayer.play("ataque dark")
 		body.restar_vidas(1)
 	if health == 0:
@@ -119,9 +127,13 @@ func _on_hitbox_attack_body_entered(body: Node2D) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "ataque dark":
+	if anim_name == "ataque dark" or anim_name == "attack":
+		if player_in_range:
+			control_states.change_state("perseguir")
+		else:
+			if not player_in_range:
+				control_states.change_state("patrulla")
 		#daño_aplicado = false
-		pass
 		
 
 
